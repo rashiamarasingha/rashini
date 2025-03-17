@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowUpRightIcon, QuoteIcon, MenuIcon } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { JSX, useState } from "react";
 
 export const Home = (): JSX.Element => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,7 +110,7 @@ export const Home = (): JSX.Element => {
                     </div>
                   </CardContent>
                 </Card>
-                <img
+                <Image
                   className="absolute w-5 md:w-8 h-5 md:h-[33px] top-0 right-[-8px] md:right-[-20px]"
                   alt="Vector"
                   src="/vector-1.svg"
@@ -124,7 +124,7 @@ export const Home = (): JSX.Element => {
                 <span className="text-neutral-900">, UI / UX Designer</span>
               </h1>
 
-              <img
+              <Image
                 className="hidden md:block absolute w-[40px] md:w-[86px] h-[40px] md:h-[88px] top-[180px] md:top-[236px] left-[5%] md:left-[31px]"
                 alt="Vector"
                 src="/vector-2.svg"
@@ -143,20 +143,20 @@ export const Home = (): JSX.Element => {
             {/* Profile Image Section */}
             <div className="mt-8 md:mt-0 md:absolute md:w-[952px] md:h-[636px] md:top-[170px] md:left-[173px] flex justify-center">
               <div className="relative w-full md:w-[1018px] h-auto md:h-[688px]">
-                <img
+                <Image
                   className="hidden md:block absolute w-[812px] h-[406px] top-[255px] left-[118px]"
                   alt="Ellipse"
                   src="/ellipse-2.svg"
                 />
 
                 {/* Profile Image */}
-                <img
+                <Image
                   className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-none md:w-[952px] md:h-[636px] md:absolute md:top-6 md:left-[35px] object-contain mx-auto"
                   alt="Young pretty woman"
                   src="/young-pretty-woman-looking-happy-goofy-with-broad-fun-loony-smil.png"
                 />
 
-                <img
+                <Image
                   className="hidden md:block absolute w-7 h-6 top-[468px] left-96"
                   alt="Vector"
                   src="/vector.svg"

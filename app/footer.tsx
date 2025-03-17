@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Mail,
-  Phone,
-  Twitter,
-  Linkedin,
-  Instagram,
-  Github,
-} from "lucide-react";
+import { Mail, Phone, Twitter, Linkedin, Instagram } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -16,7 +9,7 @@ export default function Footer() {
       <div className="bg-blue-500 py-6 px-4 md:px-8 lg:px-12">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           <h2 className="text-white text-2xl md:text-3xl font-medium mb-4 md:mb-0">
-            Let's Work together
+            Let&apos;s Work together
           </h2>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link

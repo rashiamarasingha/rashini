@@ -1,6 +1,3 @@
-import Image from "next/image";
-import DesignNav from "./DesignNav";
-import Section3 from "./aboutme";
 import ServicesSection from "./services";
 import ProjectsShowcase from "./projects-showcase";
 import Blogs from "./blogs";
