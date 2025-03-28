@@ -38,14 +38,28 @@ export default function ProjectsShowcase() {
       logoText: "HR Management Register Onboarding",
     },
     {
-      id: "interior-design",
+      id: "interior-design-1",
       title: "Interior Design Studio Website - Landing Page",
       description:
         "Interior Design Studio Website - Landing Page showcases elegant designs with a sleek, user-friendly interface, creating a captivating first impression.",
       image: "/Placeholder Image-4.svg",
     },
     {
-      id: "task-management",
+      id: "task-management-1",
+      title: "Task Management System",
+      description:
+        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features.",
+      image: "/Placeholder Image-5.svg",
+    },
+    {
+      id: "interior-design-2",
+      title: "Interior Design Studio Website - Landing Page",
+      description:
+        "Interior Design Studio Website - Landing Page showcases elegant designs with a sleek, user-friendly interface, creating a captivating first impression.",
+      image: "/Placeholder Image-4.svg",
+    },
+    {
+      id: "task-management-2",
       title: "Task Management System",
       description:
         "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features.",
@@ -79,7 +93,7 @@ export default function ProjectsShowcase() {
   };
 
   return (
-    <div className="bg-slate-50 py-16 px-4 md:px-6">
+    <div className="bg-[#F0F7FF] py-16 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-12"
@@ -93,10 +107,7 @@ export default function ProjectsShowcase() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <Button
-              variant="outline"
-              className="rounded-full px-6 py-1 h-auto text-sm font-medium bg-white"
-            >
+            <Button variant="outline" className="rounded-full py-6 px-12 border-[#171717] text-[#171717] text-lg">
               Projects
             </Button>
           </motion.div>
@@ -106,7 +117,7 @@ export default function ProjectsShowcase() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            Discover Our Success Stories
+            Discover My Design Journey
           </motion.h2>
           <motion.p
             className="text-slate-600 max-w-2xl mx-auto"
@@ -114,12 +125,12 @@ export default function ProjectsShowcase() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Explore our curated collection of successful projects.
+            Explore the projects that define my design expertise and creativity.
           </motion.p>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -136,7 +147,7 @@ export default function ProjectsShowcase() {
               }}
               className="bg-white rounded-lg overflow-hidden shadow-sm border border-slate-100"
             >
-              <div className="relative h-[220px] bg-slate-800 overflow-hidden">
+              <div className="relative h-[180px] bg-slate-800 overflow-hidden">
                 <motion.div
                   animate={{
                     scale: hoveredProject === project.id ? 1.05 : 1,
@@ -152,9 +163,9 @@ export default function ProjectsShowcase() {
                   />
                 </motion.div>
               </div>
-              <div className="p-6">
+              <div className="p-5">
                 <motion.h3
-                  className="font-bold text-lg text-slate-900 mb-2"
+                  className="font-bold text-base text-slate-900 mb-2 line-clamp-1"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
@@ -162,7 +173,7 @@ export default function ProjectsShowcase() {
                   {project.title}
                 </motion.h3>
                 <motion.p
-                  className="text-slate-600 mb-4 text-sm"
+                  className="text-slate-600 mb-4 text-sm line-clamp-2"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
@@ -205,7 +216,7 @@ export default function ProjectsShowcase() {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-6">
+            <Button className="rounded-full bg-blue-500 hover:bg-blue-600 text-white py-6 px-8">
               Explore More
             </Button>
           </motion.div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import {
   UiUxIcon,
   CreativeDesignIcon,
@@ -79,25 +80,33 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12">
-      <div className="flex flex-col items-start gap-4">
+    <section className="bg-slate-50 py-16 px-4 md:px-6">
+      <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          className="text-left mb-12"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="inline-block rounded-full border border-gray-300 px-4 py-1"
+          transition={{ duration: 0.6 }}
         >
-          <span className="text-sm font-medium">Services</span>
+          <motion.div
+            className="inline-block mb-6"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <Button variant="outline" className="rounded-full py-6 px-12 border-[#171717] text-[#171717] text-lg">
+              Services
+            </Button>
+          </motion.div>
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 text-left"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            Take a look at the variety of services I offer.
+          </motion.h2>
         </motion.div>
-
-        <motion.h2
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-2xl md:text-3xl font-bold text-gray-800"
-        >
-          Take a look at the variety of services I offer.
-        </motion.h2>
 
         <motion.div
           variants={containerVariants}
@@ -124,7 +133,7 @@ export default function ServicesSection() {
               </motion.div>
 
               <motion.h3
-                className="font-bold text-lg"
+                className="font-bold text-lg text-slate-900"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
@@ -133,7 +142,7 @@ export default function ServicesSection() {
               </motion.h3>
 
               <motion.p
-                className="text-sm text-gray-600"
+                className="text-sm text-slate-600"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
@@ -151,9 +160,9 @@ export default function ServicesSection() {
                       delay: 0.5 + index * 0.05 + itemIndex * 0.05,
                       duration: 0.3,
                     }}
-                    className="flex items-start gap-2 text-sm text-gray-600"
+                    className="flex items-start gap-2 text-sm text-slate-600"
                   >
-                    <span className="text-blue-500 font-bold">•</span>
+                    <span className="text-[#007BFF] font-bold">•</span>
                     {item}
                   </motion.li>
                 ))}

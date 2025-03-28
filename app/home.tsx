@@ -21,16 +21,16 @@ export const Home = (): JSX.Element => {
   return (
     <main className="w-full min-h-screen bg-[#f0f7ff] overflow-hidden flex justify-center">
       <div className="flex flex-col items-center relative pt-5 bg-[#F0F7FF] w-full max-w-[1440px] px-4 md:px-6">
-        {/* Navigation Bar */}
-        <nav className="w-full max-w-[1298px] h-auto md:h-[60px] flex items-center justify-between px-4 md:px-6 py-2 md:py-0 relative bg-[#FFFFFF] rounded-[30px] md:rounded-[50px] border-[none] backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] z-50">
+        {/* Navigation Bar - Increased height */}
+        <nav className="w-full max-w-[1298px] h-auto md:h-[80px] flex items-center justify-between px-4 md:px-8 py-3 md:py-0 relative bg-[#FFFFFF] rounded-[30px] md:rounded-[50px] border-[none] backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] z-50">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="relative h-8 md:h-[30px] flex items-center">
+            <div className="relative h-10 md:h-[40px] flex items-center">
               <Image
                 src="/Logo.svg"
                 alt="UX Research"
-                width={50}
-                height={30}
+                width={70}
+                height={40}
                 className="rounded-md object-contain"
               />
             </div>
@@ -43,24 +43,24 @@ export const Home = (): JSX.Element => {
               className="text-white p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <MenuIcon className="h-5 w-5" />
+              <MenuIcon className="h-6 w-6" />
             </Button>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-2">
+          <div className="hidden md:flex items-center justify-center space-x-3">
             {navItems.map((item) => (
               <Button
                 key={item.name}
                 variant="ghost"
-                className={`h-auto px-3 lg:px-6 py-1.5 lg:py-2.5 rounded-[60px] ${
+                className={`h-auto px-4 lg:px-6 py-2 lg:py-3 rounded-[60px] ${
                   item.active
                     ? "bg-transparent"
                     : "bg-transparent hover:bg-transparent"
                 }`}
               >
                 <span
-                  className={`[font-family:'Inter',Helvetica] text-sm lg:text-base tracking-[-0.30px] ${
+                  className={`[font-family:'Inter',Helvetica] text-base lg:text-lg tracking-[-0.30px] ${
                     item.active
                       ? "text-[#007BFF] font-bold"
                       : "text-[#2E2E2E] font-medium"
@@ -75,7 +75,7 @@ export const Home = (): JSX.Element => {
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden w-full max-w-[1298px] mt-2 bg-gray-900 rounded-[20px] p-4 z-40 absolute top-[70px] left-0 right-0 mx-4">
+          <div className="md:hidden w-full max-w-[1298px] mt-2 bg-gray-900 rounded-[20px] p-4 z-40 absolute top-[80px] left-0 right-0 mx-4">
             {navItems.map((item) => (
               <Button
                 key={item.name}
