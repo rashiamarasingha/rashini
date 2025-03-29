@@ -90,11 +90,11 @@ export default function ProjectsShowcase() {
     if (firstRowRef.current && secondRowRef.current) {
       // For the first row (left to right)
       const firstRowWidth = firstRowRef.current.scrollWidth;
-      const firstRowVisibleWidth = firstRowRef.current.offsetWidth;
+      // const firstRowVisibleWidth = firstRowRef.current.offsetWidth;
 
       // For the second row (right to left)
       const secondRowWidth = secondRowRef.current.scrollWidth;
-      const secondRowVisibleWidth = secondRowRef.current.offsetWidth;
+      // const secondRowVisibleWidth = secondRowRef.current.offsetWidth;
 
       // Animate first row (left to right)
       firstRowControls.start({
