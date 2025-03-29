@@ -7,21 +7,33 @@ import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
-    <main className="bg-white">
+    <main className="bg-white" id="about-me" >
       <div className="container mx-auto px-4 py-8 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div
             className="order-2 md:order-1"
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              y: [0, -10, 0], // This creates the bounce effect by moving up and down
+            }}
+            transition={{
+              duration: 0.6,
+              y: {
+                duration: 2,
+                repeat: 2,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              },
+            }}
           >
             <Image
-              src="Placeholder Image.svg"
+              src="/rashniDet.png"
               alt="Designer working on UI/UX sketches"
               width={600}
               height={450}
-              className="rounded-lg shadow-md"
+              className="rounded-lg"
             />
           </motion.div>
 
@@ -33,13 +45,16 @@ export default function AboutMe() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
-                <Button variant="outline" className="rounded-full py-6 px-12 border-[#171717] text-[#171717] text-lg">  
+                <Button
+                  variant="outline"
+                  className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-lg"
+                >
                   About Me
                 </Button>
               </motion.div>
 
               <motion.h1
-                className="text-3xl md:text-4xl font-bold text-slate-800"
+                className="text-3xl md:text-4xl font-urbanist font-semibold text-[#1C1C57]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -47,10 +62,10 @@ export default function AboutMe() {
                 Discover My Journey
               </motion.h1>
 
-              <div className="space-y-4 text-slate-700">
+              <div className="space-y-4 text-justify md:text-start text-slate-700">
                 {[
-                  "I am a UI/UX and Graphic Designer with 2 years of experience in creating user-centric digital experiences. Holding a BICT (Hons) degree from Rajarata University of Sri Lanka, I specialize in web and mobile UI/UX, dashboard design, chatbot interfaces, and branding. My expertise lies in blending creativity with usability to deliver intuitive and visually appealing solutions.", 
-                  "I focus on developing seamless, functional designs that provide meaningful interactions while ensuring a balance between aesthetics and user needs. Let's collaborate and create something impactful! ",
+                  "I am a UI/UX and Graphic Designer with 2 years of experience in creating user-centric digital experiences. Holding a BICT (Hons) degree from Rajarata University of Sri Lanka, I specialize in web and mobile UI/UX, dashboard design, chatbot interfaces, and branding. My expertise lies in blending creativity with usability to deliver intuitive and visually appealing solutions.",
+                  "I focus on developing seamless, functional designs that provide meaningful interactions while ensuring a balance between aesthetics and user needs. Let’s collaborate and create something impactful!",
                 ].map((paragraph, index) => (
                   <motion.p
                     key={index}

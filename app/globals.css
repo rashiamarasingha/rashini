@@ -64,6 +64,10 @@
   }
 }
 
+.font-urbanist {
+  font-family: var(--font-urbanist);
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -142,3 +146,28 @@
   }
 }
 
+
+.profile-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.profile-image {
+  z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
