@@ -131,12 +131,12 @@ export default function ProjectsShowcase() {
           <div className="inline-block mb-6">
             <Button
               variant="outline"
-              className="rounded-full py-6 px-12 font-urbanist border-[#171717] bg-[#F0F7FF] text-[#171717] text-lg"
+              className="rounded-full py-6 px-12 font-urbanist border-[#171717] bg-[#F0F7FF] text-[#171717] text-[22px] font-semibold"
             >
               Projects
             </Button>
           </div>
-          <h2 className="text-3xl md:text-4xl font-semibold font-urbanist text-[#1C1C57] mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold font-urbanist text-[48px] text-[#1C1C57] mb-3">
             Discover My Design Journey
           </h2>
           <p className="text-[#1C1C57] max-w-2xl mx-auto ">

@@ -8,14 +8,14 @@ export default function Blogs() {
     <div className="bg-[#FFFFFF] py-16 px-4 md:px-6" id="blogs">
       {/* Header */}
       <header className="container mx-auto py-4 text-center">
-        <Button variant="outline" className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-lg">
+        <Button variant="outline" className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] font-semibold">
           Blogs
         </Button>
       </header>
 
       {/* Hero Section */}
       <section className="container mx-auto text-center px-4 py-4">
-        <h1 className="text-3xl font-urbanist md:text-4xl font-semibold text-[#1C1C57] mb-2">
+        <h1 className="text-3xl font-urbanist md:text-4xl font-semibold text-[40px] text-[#1C1C57] mb-2">
           Unveiling Creativity Through My Insights
         </h1>
         <p className="text-[#1C1C57] max-w-2xl mx-auto mb-4">

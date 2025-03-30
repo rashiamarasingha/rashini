@@ -120,13 +120,13 @@ export default function ServicesSection() {
           >
             <Button
               variant="outline"
-              className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-lg"
+              className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] font-semibold"
             >
               Services
             </Button>
           </motion.div>
           <motion.h2
-            className="text-3xl md:text-4xl font-medium font-urbanist text-[#1C1C57] mb-3 text-left"
+            className="text-3xl md:text-4xl font-medium font-inter text-[40px] text-[#1C1C57] mb-3 text-left"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}

@@ -26,7 +26,7 @@ const MarqueeCarousel = () => {
         {/* Duplicate the items to create a seamless loop */}
         {[...items, ...items, ...items].map((item, index) => (
           <div key={index} className="flex items-center mx-4">
-            <span className="text-3xl md:text-4xl font-bold">{item}</span>
+            <span className="[font-family:'Lufga-Medium',Helvetica] text-4xl md:text-5xl font-regular text-[48px]">{item}</span>
             <span className="text-blue-500 mx-3 text-3xl">★</span>
           </div>
         ))}
