@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -75,11 +76,11 @@ const ProfileWithGSAPSpiralArrows = () => {
     
     // Calculate the path length for each arrow
     arrowElements.forEach(arrow => {
-      const length = arrow.getTotalLength();
+      const pathLength = arrow.getTotalLength();
       // Set initial state - stroke dashed and hidden
       gsap.set(arrow, { 
         strokeDasharray: "3 3", // Dotted line
-        strokeDashoffset: length,
+        strokeDashoffset: pathLength,
         opacity: 0
       });
     });
@@ -89,7 +90,7 @@ const ProfileWithGSAPSpiralArrows = () => {
     
     // Create a ScrollTrigger for each arrow and its text
     arrowElements.forEach((arrow, index) => {
-      const length = arrow.getTotalLength();
+      const pathLength = arrow.getTotalLength();
       const text = textElements[index];
       
       // Create a timeline for this arrow and text
@@ -135,9 +136,11 @@ const ProfileWithGSAPSpiralArrows = () => {
       
       {/* Profile image */}
       <div className="relative z-10">
-        <img 
+        <Image 
           src="/rashini.png" 
           alt="Profile" 
+          width={384} 
+          height={384}
           className="w-64 md:w-96 h-auto"
         />
       </div>
@@ -165,7 +168,7 @@ const ProfileWithGSAPSpiralArrows = () => {
           </defs>
           
           {/* Create each spiral arrow with its text */}
-          {arrows.map((arrow, index) => (
+          {arrows.map((arrow) => (
             <g key={arrow.id}>
               {/* The spiral dotted arrow */}
               <path
