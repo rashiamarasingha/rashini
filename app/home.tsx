@@ -242,7 +242,9 @@ export const Home = (): JSX.Element => {
               variant="ghost"
               className="w-full sm:w-56 sm:flex-1 flex items-center justify-center gap-2.5 px-4 py-2 sm:px-6 sm:py-6 rounded-[8px] overflow-hidden"
             >
-              <a className="[font-family:'Inter',Helvetica] font-light text-black text-base sm:text-lg lg:text-[25.7px] tracking-[-0.39px] leading-[normal]">
+              <a 
+              href="https://www.linkedin.com/in/rashini-kaweesha"
+              className="[font-family:'Inter',Helvetica] font-light text-black text-base sm:text-lg lg:text-[25.7px] tracking-[-0.39px] leading-[normal]">
               Let&apos;s Connect
               </a>
             </Button>

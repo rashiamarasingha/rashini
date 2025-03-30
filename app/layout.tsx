@@ -20,7 +20,7 @@ const urbanist = Urbanist({
 
 
 export const metadata: Metadata = {
-  title: "Rashini Kaveesha Portfolio",
+  title: "Rashini Kaweesha Portfolio",
   description: "I am a UI/UX and Graphic Designer with 2 years of experience in creating user-centric digital experiences.",
   manifest: "/site.webmanifest",
   icons: {

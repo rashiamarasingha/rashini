@@ -71,7 +71,7 @@ export default function ProjectsShowcase() {
       id: "interior-design-2",
       title: "Task Management System ",
       description:
-        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
+        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
       image: "/task-management.svg",
       href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design"
     },
@@ -264,9 +264,12 @@ export default function ProjectsShowcase() {
 
         <div className="mt-12 text-center">
           <div className="inline-block">
-            <Button className="rounded-[8px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
-              Explore More
-            </Button>
+            <Link href="https://www.behance.net/rashiamarasingha">
+              <Button className="rounded-[8px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
+                Explore More
+                <ArrowUpRight className="h-4 w-4 text-white ml-2" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
