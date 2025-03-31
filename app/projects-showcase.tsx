@@ -35,7 +35,7 @@ export default function ProjectsShowcase() {
         "Job Plus is a job-hunting app that connects job seekers with opportunities through a seamless and user-friendly experience.",
       image: "/jobplus.svg",
       logoText: "JobPlus",
-      href: "https://www.behance.net/gallery/194949341/JobPlus-Job-Finder-Mobile-App"
+      href: "https://www.behance.net/gallery/194949341/JobPlus-Job-Finder-Mobile-App",
     },
     {
       id: "register-onboarding",
@@ -45,7 +45,7 @@ export default function ProjectsShowcase() {
       image: "/ht-manage.svg",
       logo: "HireHo",
       logoText: "HR Management Register Onboarding",
-      href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design"
+      href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design",
     },
     {
       id: "ai-chatbot",
@@ -53,7 +53,7 @@ export default function ProjectsShowcase() {
       description:
         "A modern, intuitive interface for seamless interactions, smooth conversations, and an engaging experience with a visually appealing design.",
       image: "/ai-chatbot.svg",
-      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design"
+      href: "https://www.behance.net/gallery/221738371/AI-Chatbot-Web-Application",
     },
   ];
 
@@ -65,7 +65,7 @@ export default function ProjectsShowcase() {
       description:
         "Interior Design Studio Website - Landing Page showcases elegant designs with a sleek, user-friendly interface, creating a captivating first impression.",
       image: "/interior-design.svg",
-      href: "https://www.behance.net/gallery/221029193/Interior-Design-Studio-Website-Landing-Page"
+      href: "https://www.behance.net/gallery/221029193/Interior-Design-Studio-Website-Landing-Page",
     },
     {
       id: "interior-design-2",
@@ -73,7 +73,7 @@ export default function ProjectsShowcase() {
       description:
         "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
       image: "/task-management.svg",
-      href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design"
+      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design",
     },
     {
       id: "task-management-2",
@@ -81,7 +81,7 @@ export default function ProjectsShowcase() {
       description:
         "A mobile app revolutionising eye health management by providing a convenient tool for early detection of eye diseases.",
       image: "/ratina-wise.svg",
-      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design"
+      href: "https://www.behance.net/gallery/194533059/RetinaWise-Eye-Disease-Detecting-Mobile-App",
     },
   ];
 
@@ -125,9 +125,12 @@ export default function ProjectsShowcase() {
   }, [firstRowControls, secondRowControls]);
 
   return (
-    <div className="bg-[#F0F7FF] py-16 px-4 md:px-6 overflow-hidden" id="projects">
+    <div
+      className="bg-[#F0F7FF] py-16 px-4 md:px-6 overflow-hidden"
+      id="projects"
+    >
       <div className="max-w-7xl mx-auto">
-      <motion.div
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +151,7 @@ export default function ProjectsShowcase() {
               Projects
             </Button>
           </motion.div>
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-[34px] lg:text-[40px] font-inter font-medium text-[#1C1C57] mb-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -157,7 +160,7 @@ export default function ProjectsShowcase() {
           >
             Discover My Design Journey
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-[#1C1C57] font-inter font-normal max-w-2xl mx-auto text-[18px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -207,7 +210,7 @@ export default function ProjectsShowcase() {
                     </div>
                     <div className="border rounded-[52px] w-fit px-4 py-2 bg-linear-to-r from-[#a3a2a2] to-[#ffffff]">
                       <Link
-                         href={`${project.href}`}
+                        href={`${project.href}`}
                         className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
                       >
                         View project
@@ -266,7 +269,7 @@ export default function ProjectsShowcase() {
                     </div>
                     <div className="border rounded-[52px] w-fit px-4 py-2 bg-linear-to-r from-[#a3a2a2] to-[#ffffff]">
                       <Link
-                         href={`${project.href}`}
+                        href={`${project.href}`}
                         className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
                       >
                         View project
@@ -288,9 +291,11 @@ export default function ProjectsShowcase() {
 
         <div className="mt-12 text-center">
           <div className="inline-block">
-            <Button className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
-              Explore More
-            </Button>
+            <a href="https://www.behance.net/rashiamarasingha" className="inline-block">
+              <Button className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
+                Explore More
+              </Button>
+            </a>
           </div>
         </div>
       </div>
