@@ -3,26 +3,51 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useEffect, useState, useRef } from "react";
 
 export default function ServicesSection() {
+  const [scrollDirection, setScrollDirection] = useState("down");
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const sectionRef = useRef(null);
+  
+  // Update scroll direction when user scrolls
+  useEffect(() => {
+    const handleScroll = () => {
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      setLastScrollTop(st <= 0 ? 0 : st);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        // staggerChildren: 0.1,
         delayChildren: 0.3,
       },
     },
   };
 
+  // Dynamic item variants based on scroll direction
   const itemVariants = {
-    hidden: { y: 80, opacity: 0 },
+    hidden: { 
+      y: scrollDirection === "down" ? 80 : -80, 
+      opacity: 0 
+    },
     visible: {
       y: 0,
       opacity: 1,
-      // transition: { duration: 0.5 },
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
@@ -37,7 +62,6 @@ export default function ServicesSection() {
           alt="UI/UX Design"
         />
       ),
-      // icon: <UiUxIcon className="text-blue-500" />,
       title: "UI / UX Design",
       description: "Crafting seamless and intuitive user experiences.",
       items: [
@@ -54,11 +78,9 @@ export default function ServicesSection() {
           src="/creative-tools1.svg"
           width={40}
           height={40}
-          alt="UI/UX Design"
+          alt="Creative Design"
         />
       ),
-
-      // icon: <CreativeDesignIcon className="text-blue-500" />,
       title: "Creative Design",
       description:
         "Designing visually compelling and impactful creative solutions.",
@@ -71,9 +93,8 @@ export default function ServicesSection() {
     },
     {
       icon: (
-        <Image src="/branding1.svg" width={40} height={40} alt="UI/UX Design" />
+        <Image src="/branding1.svg" width={40} height={40} alt="Corporate Branding" />
       ),
-      // icon: <CorporateBrandingIcon className="text-blue-500" />,
       title: "Corporate Branding",
       description: "Creating memorable brand identities that stand out.",
       items: [
@@ -88,10 +109,9 @@ export default function ServicesSection() {
           src="/social-media.svg"
           width={40}
           height={40}
-          alt="UI/UX Design"
+          alt="Social Media"
         />
       ),
-      // icon: <SocialMediaIcon className="text-blue-500" />,
       title: "Social Media Marketing",
       description: "Transforming ideas into seamless experiences.",
       items: [
@@ -104,31 +124,38 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="bg-white py-16 px-4 md:px-6" id="services">
+    <section 
+      className="bg-white py-16 px-4 md:px-6" 
+      id="services"
+      ref={sectionRef}
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-left mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: scrollDirection === "down" ? -20 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
           transition={{ duration: 0.6 }}
         >
           <motion.div
             className="inline-block mb-6"
             initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             <Button
               variant="outline"
-              className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] font-semibold"
+              className="rounded-full font-semibold font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px]"
             >
               Services
             </Button>
           </motion.div>
           <motion.h2
-            className="text-3xl md:text-4xl font-medium font-inter text-[40px] text-[#1C1C57] mb-3 text-left"
+            className="text-3xl md:text-[34px] lg:text-[40px] font-inter font-medium text-[#1C1C57] mb-3 text-left"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             Take a look at the variety of services I offer.
@@ -136,16 +163,17 @@ export default function ServicesSection() {
         </motion.div>
 
         <motion.div
+          key={scrollDirection} // Force re-render when direction changes
           variants={containerVariants}
           initial="hidden"
-          // animate="visible"
-          whileInView="visible" // Changed from animate to whileInView
-          viewport={{ once: true, amount: 0.3 }} // Trigger when 30% of the container is visible
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-6"
         >
           {serviceCards.map((card, index) => (
             <motion.div
               key={index}
+              custom={index}
               variants={itemVariants}
               whileHover={{
                 y: -5,
@@ -153,10 +181,11 @@ export default function ServicesSection() {
               }}
               className="bg-white rounded-lg shadow-sm border border-[#007BFF] hover:bg-[#eef8ff] p-6 flex flex-col gap-4"
             >
-              <div className=" border shadow-md w-[60px] h-[60px] rounded-[8px] p-2 drop-shadow-lg">
+              <div className="border shadow-md w-[60px] h-[60px] rounded-[8px] p-2 drop-shadow-lg">
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: false }}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
                 >
                   {card.icon}
@@ -164,18 +193,20 @@ export default function ServicesSection() {
               </div>
 
               <motion.h3
-                className="font-medium text-[24px] text-slate-900"
+                className="font-medium font-inter text-[24px] text-slate-900"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
               >
                 {card.title}
               </motion.h3>
 
               <motion.p
-                className="text-[16px] font-normal text-[#3E3E70]"
+                className="text-[16px] font-inter font-normal text-[#3E3E70]"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
               >
                 {card.description}
@@ -185,13 +216,17 @@ export default function ServicesSection() {
                 {card.items.map((item, itemIndex) => (
                   <motion.li
                     key={itemIndex}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ 
+                      opacity: 0, 
+                      x: scrollDirection === "down" ? -10 : 10 
+                    }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false }}
                     transition={{
                       delay: 0.5 + index * 0.05 + itemIndex * 0.05,
                       duration: 0.3,
                     }}
-                    className="flex items-start gap-2 text-sm font-medium text-[#1C1C57]"
+                    className="flex items-start gap-2 text-sm font-inter font-medium text-[#1C1C57]"
                   >
                     <span className="text-[#1C1C57] font-bold">•</span>
                     {item}

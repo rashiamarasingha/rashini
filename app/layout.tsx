@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Urbanist } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Urbanist } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,10 +18,28 @@ const urbanist = Urbanist({
   subsets: ["latin"],
   display: "swap",
 });
-
+const inter = Inter({
+  variable: "--font-urbanist",
+  subsets: ["latin"],
+  display: "swap",
+});
+const lufga = localFont({
+  src: [
+    {
+      path: "../public/fonts/lufga/LufgaExtraLight.ttf",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/lufga/LufgaLight.ttf",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lufga",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "Rashini Kaweesha Portfolio",
+  title: "Rashini Kaveesha Portfolio",
   description: "I am a UI/UX and Graphic Designer with 2 years of experience in creating user-centric digital experiences.",
   manifest: "/site.webmanifest",
   icons: {
@@ -42,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${urbanist.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${urbanist.variable} ${lufga.variable}  ${inter.variable} antialiased w-full`}
       >
         {children}
       </body>

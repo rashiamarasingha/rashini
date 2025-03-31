@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const MarqueeCarousel = () => {
   const items = [
@@ -11,7 +12,7 @@ const MarqueeCarousel = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-slate-50 py-6">
+    <div className="w-full overflow-hidden bg-slate-50 py-3">
       <motion.div
         className="flex whitespace-nowrap"
         animate={{
@@ -19,15 +20,17 @@ const MarqueeCarousel = () => {
         }}
         transition={{
           repeat: Infinity,
-          duration: 20,
+          duration: 10,
           ease: "linear"
         }}
       >
         {/* Duplicate the items to create a seamless loop */}
         {[...items, ...items, ...items].map((item, index) => (
-          <div key={index} className="flex items-center mx-4">
-            <span className="[font-family:'Lufga-Medium',Helvetica] text-4xl md:text-5xl font-regular text-[48px]">{item}</span>
-            <span className="text-blue-500 mx-3 text-3xl">★</span>
+          <div key={index} className="flex items-center ml-4 font-normal ">
+            <span className="text-3xl md:text-[48px] font-semibold font-lufga ">{item}</span>
+            <span className="text-blue-500 mx-3 text-3xl w-[34px] h-[34px] ml-6 ">
+              <Image src="/Star.svg" alt="Star" width={34} height={34} className='w-[34px] h-[34px]' />
+            </span>
           </div>
         ))}
       </motion.div>

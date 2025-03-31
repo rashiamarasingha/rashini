@@ -71,7 +71,7 @@ export default function ProjectsShowcase() {
       id: "interior-design-2",
       title: "Task Management System ",
       description:
-        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
+        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
       image: "/task-management.svg",
       href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design"
     },
@@ -127,22 +127,46 @@ export default function ProjectsShowcase() {
   return (
     <div className="bg-[#F0F7FF] py-16 px-4 md:px-6 overflow-hidden" id="projects">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-block mb-6">
+      <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.div
+            className="inline-block mb-6"
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
             <Button
               variant="outline"
-              className="rounded-full py-6 px-12 font-urbanist border-[#171717] bg-[#F0F7FF] text-[#171717] text-[22px] font-semibold"
+              className="rounded-full py-6 px-12 font-urbanist font-semibold border-[#171717] bg-[#F0F7FF] text-[#171717] text-[22px]"
             >
               Projects
             </Button>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-urbanist text-[48px] text-[#1C1C57] mb-3">
+          </motion.div>
+          <motion.h2 
+            className="text-3xl md:text-[34px] lg:text-[40px] font-inter font-medium text-[#1C1C57] mb-3"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
             Discover My Design Journey
-          </h2>
-          <p className="text-[#1C1C57] max-w-2xl mx-auto ">
+          </motion.h2>
+          <motion.p 
+            className="text-[#1C1C57] font-inter font-normal max-w-2xl mx-auto text-[18px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
             Explore the projects that define my design expertise and creativity.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* First row carousel - Left to Right */}
         <div className="mb-8 w-full" ref={firstRowRef}>
@@ -174,17 +198,17 @@ export default function ProjectsShowcase() {
                   </div>
                   <div className="pt-5 flex flex-col justify-between h-[166px]">
                     <div>
-                      <h3 className="font-bold text-xl text-slate-900 mb-3 ">
+                      <h3 className="font-medium font-inter text-xl text-slate-900 mb-3 ">
                         {project.title}
                       </h3>
-                      <p className="text-slate-600 mb-6 text-base line-clamp-3">
+                      <p className="text-slate-600 font-inter font-normal text-[16px] mb-6 text-base line-clamp-3">
                         {project.description}
                       </p>
                     </div>
                     <div className="border rounded-[52px] w-fit px-4 py-2 bg-linear-to-r from-[#a3a2a2] to-[#ffffff]">
                       <Link
                          href={`${project.href}`}
-                        className="inline-flex items-center gap-1 text-black text-sm font-medium  group"
+                        className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
                       >
                         View project
                         <span
@@ -233,17 +257,17 @@ export default function ProjectsShowcase() {
                   </div>
                   <div className="pt-5 flex flex-col justify-between h-[166px]">
                     <div>
-                      <h3 className="font-bold text-xl text-slate-900 mb-3 ">
+                      <h3 className="font-medium font-inter text-xl text-slate-900 mb-3 ">
                         {project.title}
                       </h3>
-                      <p className="text-slate-600 mb-6 text-base line-clamp-3">
+                      <p className="text-slate-600 font-inter font-normal text-[16px] mb-6 text-base line-clamp-3">
                         {project.description}
                       </p>
                     </div>
                     <div className="border rounded-[52px] w-fit px-4 py-2 bg-linear-to-r from-[#a3a2a2] to-[#ffffff]">
                       <Link
-                        href={`${project.href}`}
-                        className="inline-flex items-center gap-1 text-black  text-sm font-medium group"
+                         href={`${project.href}`}
+                        className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
                       >
                         View project
                         <span
@@ -264,12 +288,9 @@ export default function ProjectsShowcase() {
 
         <div className="mt-12 text-center">
           <div className="inline-block">
-            <Link href="https://www.behance.net/rashiamarasingha">
-              <Button className="rounded-[8px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
-                Explore More
-                <ArrowUpRight className="h-4 w-4 text-white ml-2" />
-              </Button>
-            </Link>
+            <Button className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
+              Explore More
+            </Button>
           </div>
         </div>
       </div>

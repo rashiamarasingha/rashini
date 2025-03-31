@@ -13,11 +13,12 @@ export default function AboutMe() {
           <motion.div
             className="order-2 md:order-1"
             initial={{ opacity: 0, x: -50 }}
-            animate={{
+            whileInView={{
               opacity: 1,
               x: 0,
               y: [0, -10, 0], // This creates the bounce effect by moving up and down
             }}
+            viewport={{ once: false }} // Animation triggers every time element enters viewport
             transition={{
               duration: 0.6,
               y: {
@@ -37,32 +38,52 @@ export default function AboutMe() {
             />
           </motion.div>
 
-          <div className="order-1 md:order-2 flex flex-col space-y-6">
+          <motion.div 
+            className="order-1 md:order-2 flex flex-col space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              y: [0, -10, 0], // Same bounce effect as the image
+            }}
+            viewport={{ once: false }} // Animation triggers every time element enters viewport
+            transition={{
+              duration: 0.6,
+              y: {
+                duration: 2,
+                repeat: 2,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              },
+            }}
+          >
             <div className="space-y-8">
               <motion.div
                 className="mb-4"
                 initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
                 <Button
                   variant="outline"
-                  className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] font-semibold"
+                  className="rounded-full font-urbanist py-6 px-12 border-[#171717] font-semibold text-[#171717] text-[22px]"
                 >
                   About Me
                 </Button>
               </motion.div>
 
               <motion.h1
-                className="text-3xl md:text-4xl font-Inter font-medium text-[40px] text-[#1C1C57]"
+                className="text-3xl md:text-[34px] lg:text-[40px] font-inter font-medium text-[#1C1C57]"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
                 Discover My Journey
               </motion.h1>
 
-              <div className="space-y-4 text-justify md:text-start text-slate-700">
+              <div className="space-y-4 font-inter font-normal text-justify md:text-start text-slate-700">
                 {[
                   "I am a UI/UX and Graphic Designer with 2 years of experience in creating user-centric digital experiences. Holding a BICT (Hons) degree from Rajarata University of Sri Lanka, I specialize in web and mobile UI/UX, dashboard design, chatbot interfaces, and branding. My expertise lies in blending creativity with usability to deliver intuitive and visually appealing solutions.",
                   "I focus on developing seamless, functional designs that provide meaningful interactions while ensuring a balance between aesthetics and user needs. Let's collaborate and create something impactful!",
@@ -70,7 +91,8 @@ export default function AboutMe() {
                   <motion.p
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
                     transition={{ delay: 0.6 + index * 0.2, duration: 0.5 }}
                   >
                     {paragraph}
@@ -79,9 +101,10 @@ export default function AboutMe() {
               </div>
 
               <motion.div
-                className="flex space-x-4 pt-2"
+                className="flex space-x-4 pt-2 font-inter font-medium text-[18px]"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false }}
                 transition={{ delay: 1.4, duration: 0.5 }}
               >
                 {[
@@ -94,7 +117,7 @@ export default function AboutMe() {
                         alt="LinkedIn"
                         width={20}
                         height={20}
-                        className="text-[#007BFF]"
+                        className="text-[#007BFF] font-inter font-medium text-[18px]"
                       />
                     ),
                   },
@@ -107,7 +130,7 @@ export default function AboutMe() {
                         alt="Behance"
                         width={20}
                         height={20}
-                        className="text-[#007BFF]"
+                        className="text-[#007BFF] font-inter font-medium text-[18px]"
                       />
                     ),
                   },
@@ -120,7 +143,7 @@ export default function AboutMe() {
                         alt="Dribbble"
                         width={20}
                         height={20}
-                        className="text-[#007BFF]"
+                        className="text-[#007BFF] "
                       />
                     ),
                   },
@@ -143,7 +166,7 @@ export default function AboutMe() {
                 ))}
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </main>

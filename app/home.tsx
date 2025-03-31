@@ -8,13 +8,7 @@ import Link from "next/link";
 import { JSX, useEffect, useState } from "react";
 
 // Add this Typewriter component
-const Typewriter = ({
-  text,
-  speed = 100,
-}: {
-  text: string;
-  speed?: number;
-}) => {
+const Typewriter = ({ text, speed = 100 }: { text: string; speed?: number }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -85,7 +79,7 @@ export const Home = (): JSX.Element => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-3">
+          <div className="hidden md:flex items-center justify-center space-x-1 md:space-x-3 ">
             {navItems.map((item) => (
               <Button
                 key={item.name}
@@ -98,9 +92,9 @@ export const Home = (): JSX.Element => {
               >
                 <a
                   href={item.href}
-                  className={`[font-family:'Inter',Helvetica] text-[20px] tracking-[-0.30px] ${
+                  className={`[font-family:'Inter',Helvetica] text-base font-medium  lg:text-[20px] tracking-[-0.30px] ${
                     item.active
-                      ? "text-[#007BFF] font-medium"
+                      ? "text-[#007BFF] font-bold"
                       : "text-[#2E2E2E] font-medium"
                   }`}
                 >
@@ -127,9 +121,9 @@ export const Home = (): JSX.Element => {
               >
                 <a
                   href={item.href}
-                  className={`[font-family:'Inter',Helvetica] text-[20px] tracking-[-0.30px] ${
+                  className={`font-inter text-base font-medium  tracking-[-0.30px] ${
                     item.active
-                      ? "text-[#007BFF] font-medium"
+                      ? "text-[#007BFF] font-bold"
                       : "text-[#2E2E2E] font-medium"
                   }`}
                 >
@@ -149,7 +143,7 @@ export const Home = (): JSX.Element => {
               <div className="relative mb-4">
                 <Card className="inline-flex h-8 sm:h-10 md:h-[45px] items-center justify-center px-4 md:px-6 py-1 md:py-3 bg-[#ffffff1a] rounded-[38.24px] overflow-hidden border-[1.27px] border-solid border-neutral-900">
                   <CardContent className="p-0">
-                    <div className="[font-family:'Lufga-Medium',Helvetica] font-medium text-gray-900 text-[22px] tracking-[-0.30px]">
+                    <div className="[font-family:'Lufga-Medium',Helvetica] font-medium text-gray-900 text-base md:text-xl tracking-[-0.30px]">
                       Hello!
                     </div>
                   </CardContent>
@@ -239,21 +233,18 @@ export const Home = (): JSX.Element => {
             <Button className="w-full sm:w-56 flex items-center justify-center px-4 py-2 sm:px-6 sm:py-6 bg-[#007bff] rounded-[8px] overflow-hidden border-[0.5px] border-solid border-[#cfd4dc]">
               <a
                 href="#projects"
-                className="[font-family:'Inter',Helvetica] font-medium text-[24px] text-white text-base sm:text-lg lg:text-[25.7px] tracking-[-0.39px] leading-[normal] mr-2"
+                className="[font-family:'Inter',Helvetica] font-medium text-white text-base sm:text-lg lg:text-[24px] tracking-[-0.39px] leading-[normal] mr-2"
               >
                 View My Work
               </a>
             </Button>
             <Button
               variant="ghost"
-              className="w-full sm:w-56 sm:flex-1 flex items-center justify-center gap-2.5 px-4 py-2 sm:px-6 sm:py-6 rounded-[8px] overflow-hidden"
+              className="w-full sm:w-56 sm:flex-1 flex font-medium items-center justify-center gap-2.5 px-4 py-2 sm:px-6 sm:py-6 rounded-[8px] overflow-hidden"
             >
-              <a
-                href="https://www.linkedin.com/in/rashini-kaweesha"
-                className="[font-family:'Inter',Helvetica] font-medium text-black text-base sm:text-lg lg:text-[25.7px] text-[24px] tracking-[-0.39px] leading-[normal]"
-              >
-                Let&apos;s Connect
-              </a>
+              <Link  href="https://www.linkedin.com/in/rashini-kaweesha" className="[font-family:'Inter',Helvetica] font-light text-black text-base sm:text-lg lg:text-[24px] tracking-[-0.39px] leading-[normal]">
+              Let&apos;s Connect
+              </Link>
             </Button>
           </CardContent>
         </Card>
