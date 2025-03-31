@@ -1,8 +1,35 @@
+"use client";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react"; // Added ArrowUpRight import
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Footer() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Function to open Google Calendar with Meet creation
+  const handleBookCall = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    // Google Calendar URL to create a new event with Google Meet
+    const now = new Date();
+    // Default event duration - 30 minutes
+    const thirtyMinutesLater = new Date(now.getTime() + 30 * 60000);
+    
+    // Format dates for Google Calendar URL
+    const startDate = now.toISOString().replace(/-|:|\.\d+/g, '');
+    const endDate = thirtyMinutesLater.toISOString().replace(/-|:|\.\d+/g, '');
+    
+    // Create URL with pre-filled information
+    const calendarURL = `https://calendar.google.com/calendar/u/0/r/eventedit?text=Meeting+with+RK.Design+Studio&dates=${startDate}/${endDate}&details=Call+scheduled+from+website&add=meet@google.com&ctz=local`;
+    
+    // Open Google Calendar in a new tab
+    window.open(calendarURL, "_blank");
+    
+    setIsLoading(false);
+  };
+
   return (
     <footer className="w-full">
       {/* Blue banner section with more curved top corners */}
@@ -16,19 +43,20 @@ export default function Footer() {
           </h2>
           <div className="flex flex-row gap-3">
             <Link
-              href="mailto:example@email.com?subject=Inquiry from Website&body=Hello, I'd like to discuss a project with you."
+              href="mailto:rashinikaweesha47@gmail.com?subject=Inquiry from Website&body=Hello, I'd like to discuss a project with you."
               className="flex items-center font-urbanist font-medium md:text-[20px] justify-center gap-2 text-white border border-white rounded-[8px] px-5 py-2 transition-colors"
             >
               <span>Send a mail</span>
               <ArrowUpRight className="h-6 w-6" />
             </Link>
-            <Link
-              href="#"
+            <button
+              onClick={handleBookCall}
               className="flex items-center font-urbanist font-medium md:text-[20px] justify-center gap-2 bg-white text-[#007BFF] rounded-[8px] px-5 py-2 transition-colors"
+              disabled={isLoading}
             >
-              <span>Book a call</span>
-              <ArrowUpRight className="h-6 w-6" /> {/* Added ArrowUpRight */}
-            </Link>
+              <span>{isLoading ? "Opening Calendar..." : "Book a call"}</span>
+              <ArrowUpRight className="h-6 w-6" />
+            </button>
           </div>
         </div>
       </div>
