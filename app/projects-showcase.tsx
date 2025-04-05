@@ -33,27 +33,27 @@ export default function ProjectsShowcase() {
       title: "JobPlus - Job Finder Mobile App",
       description:
         "Job Plus is a job-hunting app that connects job seekers with opportunities through a seamless and user-friendly experience.",
-      image: "/jobplus.svg",
+      image: "/jobplus.jpg",
       logoText: "JobPlus",
-      href: "https://www.behance.net/gallery/194949341/JobPlus-Job-Finder-Mobile-App",
+      href: "https://www.behance.net/gallery/194949341/JobPlus-Job-Finder-Mobile-App"
     },
     {
       id: "register-onboarding",
       title: "Register Onboarding - Dashboard UI Design",
       description:
         "Register Onboarding & Dashboard UI ensures a smooth sign-up and intuitive user experience with a clean, accessible interface.",
-      image: "/ht-manage.svg",
+      image: "/ht-manage.jpg",
       logo: "HireHo",
       logoText: "HR Management Register Onboarding",
-      href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design",
+      href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design"
     },
     {
       id: "ai-chatbot",
       title: "AI Chatbot Web Application",
       description:
         "A modern, intuitive interface for seamless interactions, smooth conversations, and an engaging experience with a visually appealing design.",
-      image: "/ai-chatbot.svg",
-      href: "https://www.behance.net/gallery/221738371/AI-Chatbot-Web-Application",
+      image: "/ai-chatbot.jpg",
+      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design"
     },
   ];
 
@@ -64,24 +64,24 @@ export default function ProjectsShowcase() {
       title: "Interior Design Studio Website - Landing Page",
       description:
         "Interior Design Studio Website - Landing Page showcases elegant designs with a sleek, user-friendly interface, creating a captivating first impression.",
-      image: "/interior-design.svg",
-      href: "https://www.behance.net/gallery/221029193/Interior-Design-Studio-Website-Landing-Page",
+      image: "/interior-design.jpg",
+      href: "https://www.behance.net/gallery/221029193/Interior-Design-Studio-Website-Landing-Page"
     },
     {
       id: "interior-design-2",
       title: "Task Management System ",
       description:
-        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
-      image: "/task-management.svg",
-      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design",
+        "Task Management System simplifies workflow with intuitive task tracking, collaboration, and productivity-boosting features. ",
+      image: "/task-management.jpg",
+      href: "https://www.behance.net/gallery/221216139/Register-Onboarding-Dashboard-UI-Design"
     },
     {
       id: "task-management-2",
       title: "RetinaWise - Eye Disease Detecting Mobile App",
       description:
         "A mobile app revolutionising eye health management by providing a convenient tool for early detection of eye diseases.",
-      image: "/ratina-wise.svg",
-      href: "https://www.behance.net/gallery/194533059/RetinaWise-Eye-Disease-Detecting-Mobile-App",
+      image: "/ratina-wise.jpg",
+      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design"
     },
   ];
 
@@ -125,12 +125,9 @@ export default function ProjectsShowcase() {
   }, [firstRowControls, secondRowControls]);
 
   return (
-    <div
-      className="bg-[#F0F7FF] py-16 px-4 md:px-6 overflow-hidden"
-      id="projects"
-    >
+    <div className="bg-[#F0F7FF] py-16 px-4 md:px-6 overflow-hidden" id="projects">
       <div className="max-w-7xl mx-auto">
-        <motion.div
+      <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -146,12 +143,12 @@ export default function ProjectsShowcase() {
           >
             <Button
               variant="outline"
-              className="rounded-full py-6 px-12 font-urbanist font-semibold border-[#171717] bg-[#F0F7FF] text-[#171717] text-[22px]"
+              className="rounded-full py-6 px-12 font-urbanist font-semibold border-[#171717] bg-[#F0F7FF] text-[#171717] text-[22px] hover:bg-[#F0F7FF] hover:border-[#171717] hover:text-[#171717] hover:shadow-none"
             >
               Projects
             </Button>
           </motion.div>
-          <motion.h2
+          <motion.h2 
             className="text-3xl md:text-[34px] lg:text-[40px] font-inter font-medium text-[#1C1C57] mb-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -160,7 +157,7 @@ export default function ProjectsShowcase() {
           >
             Discover My Design Journey
           </motion.h2>
-          <motion.p
+          <motion.p 
             className="text-[#1C1C57] font-inter font-normal max-w-2xl mx-auto text-[18px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -181,9 +178,9 @@ export default function ProjectsShowcase() {
                   key={`${project.id}-${index}`}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] shadow-md  hover:shadow-lg overflow-hidden border w-[400px] h-[520px]  md:w-[642px] md:h-fit mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
+                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] shadow-md  hover:shadow-lg overflow-hidden border w-[400px] h-[520px]  md:w-[500px] md:h-fit mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
                 >
-                  <div className="relative rounded-[10px]   h-[250px] bg-white overflow-hidden">
+                  <div className="relative rounded-[10px]  h-[250px] bg-white overflow-hidden">
                     <div
                       className={`w-full h-full transition-transform duration-500 ${
                         hoveredProject === project.id
@@ -195,11 +192,11 @@ export default function ProjectsShowcase() {
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="object-fill "
                       />
                     </div>
                   </div>
-                  <div className="pt-5 flex flex-col justify-between h-[166px]">
+                  <div className="pt-5 flex flex-col justify-between h-[200px]">
                     <div>
                       <h3 className="font-medium font-inter text-xl text-slate-900 mb-3 ">
                         {project.title}
@@ -208,14 +205,14 @@ export default function ProjectsShowcase() {
                         {project.description}
                       </p>
                     </div>
-                    <div className="border rounded-[52px] w-fit px-4 py-2 bg-linear-to-r from-[#a3a2a2] to-[#ffffff]">
+                    <div className="border rounded-[52px] border-none w-fit px-4 py-2 bg-linear-to-r from-[#8ec0f6] to-[#ffffff]">
                       <Link
-                        href={`${project.href}`}
+                         href={`${project.href}`}
                         className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
                       >
                         View project
                         <span
-                          className={`ml-1 transition-transform flex justify-center items-center duration-300 bg-black rounded-full w-6 h-6 ${
+                          className={`ml-1 transition-transform flex justify-center items-center duration-300 bg-[#007BFF] rounded-full w-6 h-6 ${
                             hoveredProject === project.id ? "translate-x-1" : ""
                           }`}
                         >
@@ -240,7 +237,7 @@ export default function ProjectsShowcase() {
                   key={`${project.id}-${index}`}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] hover:shadow-lg  overflow-hidden shadow-md border border-slate-100 w-[400px] h-[520px]  md:w-[642px] md:h-fit  mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
+                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] hover:shadow-lg  overflow-hidden shadow-md border border-slate-100 w-[400px] h-[520px]  md:w-[500px] md:h-fit  mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
                 >
                   <div className="relative rounded-[14px]  h-[250px] bg-white overflow-hidden">
                     <div
@@ -254,11 +251,11 @@ export default function ProjectsShowcase() {
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="object-fill"
                       />
                     </div>
                   </div>
-                  <div className="pt-5 flex flex-col justify-between h-[166px]">
+                  <div className="pt-5 flex flex-col justify-between h-[200px]">
                     <div>
                       <h3 className="font-medium font-inter text-xl text-slate-900 mb-3 ">
                         {project.title}
@@ -267,14 +264,14 @@ export default function ProjectsShowcase() {
                         {project.description}
                       </p>
                     </div>
-                    <div className="border rounded-[52px] w-fit px-4 py-2 bg-linear-to-r from-[#a3a2a2] to-[#ffffff]">
+                    <div className="border rounded-[52px] w-fit border-none px-4 py-2 bg-linear-to-r from-[#8ec0f6] to-[#ffffff]">
                       <Link
-                        href={`${project.href}`}
+                         href={`${project.href}`}
                         className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
                       >
                         View project
                         <span
-                          className={`ml-1 transition-transform flex justify-center items-center duration-300 bg-black rounded-full w-6 h-6 ${
+                          className={`ml-1 transition-transform flex justify-center items-center duration-300 bg-[#007BFF]  rounded-full w-6 h-6 ${
                             hoveredProject === project.id ? "translate-x-1" : ""
                           }`}
                         >
@@ -291,11 +288,12 @@ export default function ProjectsShowcase() {
 
         <div className="mt-12 text-center">
           <div className="inline-block">
-            <a href="https://www.behance.net/rashiamarasingha" className="inline-block">
-              <Button className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
-                Explore More
-              </Button>
-            </a>
+            <Link href="https://www.behance.net/rashiamarasingha">
+
+            <Button  className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
+              Explore More
+            </Button>
+            </Link>
           </div>
         </div>
       </div>

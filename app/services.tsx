@@ -146,7 +146,7 @@ export default function ServicesSection() {
           >
             <Button
               variant="outline"
-              className="rounded-full font-semibold font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px]"
+              className="rounded-full font-semibold font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] hover:bg-transparent hover:border-[#171717] hover:text-[#171717] hover:shadow-none"
             >
               Services
             </Button>
@@ -181,10 +181,10 @@ export default function ServicesSection() {
               }}
               className="bg-white rounded-lg shadow-sm border border-[#007BFF] hover:bg-[#eef8ff] p-6 flex flex-col gap-4"
             >
-              <div className="border shadow-md w-[60px] h-[60px] rounded-[8px] p-2 drop-shadow-lg">
+              <div className="w-[60px] h-[60px] rounded-[8px] p-2 drop-shadow-lg">
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
+                  whileInView={{ scale: 1.4, opacity: 1 }}
                   viewport={{ once: false }}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
                 >

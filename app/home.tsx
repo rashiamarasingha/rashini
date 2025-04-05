@@ -47,7 +47,7 @@ export const Home = (): JSX.Element => {
     <main className="w-full  md:min-h-[800px] lg:min-h-[900px] bg-[#f0f7ff] overflow-hidden  flex justify-center">
       <div className="flex flex-col items-center relative pt-5 bg-[#F0F7FF] w-full max-w-[1440px] px-4 md:px-6">
         {/* Navigation Bar - Increased height */}
-        <nav className="w-full max-w-[1298px] h-auto md:h-[80px] flex items-center justify-between px-4 md:px-8 py-3 md:py-0 relative bg-[#FFFFFF] rounded-[30px] md:rounded-[50px] border-[none] backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] z-50">
+        <nav className="w-full max-w-[1298px] h-auto md:h-[70px] flex items-center justify-between px-4 md:px-8 py-3 md:py-0 relative bg-[#FFFFFF] rounded-[30px] md:rounded-[50px] border-[none] backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] z-50">
           {/* Logo */}
           <div className="flex items-center">
             <div className="relative h-10 md:h-[40px] flex items-center">
@@ -84,19 +84,15 @@ export const Home = (): JSX.Element => {
               <Button
                 key={item.name}
                 variant="ghost"
-                className={`h-auto px-4 lg:px-6 py-2 lg:py-3 rounded-[60px] ${
-                  item.active
-                    ? "bg-transparent"
-                    : "bg-transparent hover:bg-transparent"
-                }`}
+                className={`h-auto px-4 lg:px-6 py-2 lg:py-3 rounded-[60px] bg-transparent hover:bg-transparent`}
               >
                 <a
                   href={item.href}
-                  className={`[font-family:'Inter',Helvetica] text-base font-medium  lg:text-[20px] tracking-[-0.30px] ${
+                  className={`[font-family:'Inter',Helvetica] text-base font-medium lg:text-[20px] tracking-[-0.30px] ${
                     item.active
                       ? "text-[#007BFF] font-bold"
-                      : "text-[#2E2E2E] font-medium"
-                  }`}
+                      : "text-[#2E2E2E] font-medium hover:text-[#007BFF]"
+                  } transition-colors duration-200`}
                 >
                   {item.name}
                 </a>
@@ -107,25 +103,21 @@ export const Home = (): JSX.Element => {
 
         {/* Mobile Menu Dropdown - Improved */}
         {mobileMenuOpen && (
-          <div className="md:hidden  w-[calc(100%-2rem)] mx-auto mt-6 bg-white rounded-[20px] p-4 shadow-lg z-40 absolute top-[70px] left-0 right-0 border border-gray-100 animate-in fade-in slide-in-from-top duration-300">
+          <div className="md:hidden w-[calc(100%-2rem)] mx-auto mt-6 bg-white rounded-[20px] p-4 shadow-lg z-40 absolute top-[70px] left-0 right-0 border border-gray-100 animate-in fade-in slide-in-from-top duration-300">
             {navItems.map((item) => (
               <Button
                 key={item.name}
                 variant="ghost"
-                className={`w-full justify-start mb-2 py-3 rounded-[20px] ${
-                  item.active
-                    ? "bg-[#f0f7ff]"
-                    : "bg-transparent hover:bg-[#f9fbff]"
-                }`}
+                className={`w-full justify-start mb-2 py-3 rounded-[20px] bg-transparent hover:bg-transparent`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <a
                   href={item.href}
-                  className={`font-inter text-base font-medium  tracking-[-0.30px] ${
+                  className={`font-inter text-base font-medium tracking-[-0.30px] ${
                     item.active
                       ? "text-[#007BFF] font-bold"
-                      : "text-[#2E2E2E] font-medium"
-                  }`}
+                      : "text-[#2E2E2E] font-medium hover:text-[#007BFF]"
+                  } transition-colors duration-200`}
                 >
                   {item.name}
                 </a>
@@ -207,7 +199,7 @@ export const Home = (): JSX.Element => {
 
                 {/* Profile Image */}
                 <Image
-                  className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-none md:w-[952px] md:h-[636px] md:absolute md:top-6 lg:top-32 md:left-[35px] object-contain mx-auto"
+                  className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-none md:w-[952px] md:h-[636px] md:absolute md:top-6 lg:top-32 md:-left-[70px] object-contain mx-auto"
                   alt="Young pretty woman"
                   // src="/young-pretty-woman-looking-happy-goofy-with-broad-fun-loony-smil.png"
                   src="/rashiniScratch.png"

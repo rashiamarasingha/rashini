@@ -26,7 +26,7 @@ export default function Blogs() {
         >
           <Button
             variant="outline"
-            className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] font-semibold"
+            className="rounded-full font-urbanist py-6 px-12 border-[#171717] text-[#171717] text-[22px] font-semibold hover:bg-transparent hover:border-[#171717] hover:text-[#171717] hover:shadow-none"
           >
             Blogs
           </Button>
@@ -71,7 +71,7 @@ export default function Blogs() {
           >
             <div className="lg:w-1/3 xl:w-[276px] mb-4 lg:mb-0 lg:h-[250px] lg:mr-6">
               <Image
-                src="Placeholder Image-6.svg"
+                src="/PlaceholderImage.jpg"
                 alt="UI/UX Design Trends"
                 width={300}
                 height={150}
@@ -88,7 +88,7 @@ export default function Blogs() {
                 in 2024.
               </p>
               <Link
-                href="https://medium.com/@rashinikaweesha47/unveiling-the-latest-ui-ux-design-trends-in-2024-c36dccbd8f5a"
+                href=" https://medium.com/@rashinikaweesha47/unveiling-the-latest-ui-ux-design-trends-in-2024-c36dccbd8f5a"
                 className="text-blue-500 hover:text-blue-700 flex items-center text-[16px] font-inter font-normal"
               >
                 Read more <ArrowRight className="ml-1 h-4 w-4" />
@@ -123,7 +123,7 @@ export default function Blogs() {
                 others frustrate you?
               </p>
               <Link
-                href="https://medium.com/@rashinikaweesha47/unveiling-the-latest-ui-ux-design-trends-in-2024-c36dccbd8f5a"
+                href="https://medium.com/@rashinikaweesha47/a-beginners-guide-to-ux-research-methods-best-practices-94c5289a1e85"
                 className="text-blue-500 hover:text-blue-700 flex items-center text-[16px] font-inter font-normal"
               >
                 Read more <ArrowRight className="ml-1 h-4 w-4" />

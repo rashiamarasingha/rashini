@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
-    <main className="bg-white" id="about-me" >
-      <div className="container mx-auto px-4 py-8 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <main className="bg-white" id="about-me">
+      <div className="container mx-auto  pt-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-16  items-center">
           <motion.div
-            className="order-2 md:order-1"
+            className="order-2 md:order-1 overflow-hidden relative"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{
               opacity: 1,
@@ -34,11 +34,11 @@ export default function AboutMe() {
               alt="Designer working on UI/UX sketches"
               width={600}
               height={450}
-              className="rounded-lg"
+              className="rounded-lg relative top-12 md:top-10 lg:top-16" // Using relative positioning to move down
             />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="order-1 md:order-2 flex flex-col space-y-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{
@@ -67,7 +67,7 @@ export default function AboutMe() {
               >
                 <Button
                   variant="outline"
-                  className="rounded-full font-urbanist py-6 px-12 border-[#171717] font-semibold text-[#171717] text-[22px]"
+                  className="rounded-full font-urbanist py-6 px-12 hover:bg-white border-[#171717] font-semibold text-[#171717] text-[22px]"
                 >
                   About Me
                 </Button>

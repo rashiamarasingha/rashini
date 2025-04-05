@@ -19,7 +19,7 @@ const urbanist = Urbanist({
   display: "swap",
 });
 const inter = Inter({
-  variable: "--font-urbanist",
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
@@ -44,12 +44,25 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "any" }, // Add favicon.ico for better browser compatibility
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" }, // Add SVG version if available
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
+    other: [
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
+  // Ensure vercel.svg is not used as default
+  verification: {
+    other: {
+      "msapplication-TileColor": "#ffffff",
+      "theme-color": "#ffffff"
+    }
   },
 };
 

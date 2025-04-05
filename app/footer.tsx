@@ -8,25 +8,27 @@ export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
 
   // Function to open Google Calendar with Meet creation
-  const handleBookCall = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleBookCall = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Google Calendar URL to create a new event with Google Meet
     const now = new Date();
     // Default event duration - 30 minutes
     const thirtyMinutesLater = new Date(now.getTime() + 30 * 60000);
-    
+
     // Format dates for Google Calendar URL
-    const startDate = now.toISOString().replace(/-|:|\.\d+/g, '');
-    const endDate = thirtyMinutesLater.toISOString().replace(/-|:|\.\d+/g, '');
-    
+    const startDate = now.toISOString().replace(/-|:|\.\d+/g, "");
+    const endDate = thirtyMinutesLater.toISOString().replace(/-|:|\.\d+/g, "");
+
     // Create URL with pre-filled information
     const calendarURL = `https://calendar.google.com/calendar/u/0/r/eventedit?text=Meeting+with+RK.Design+Studio&dates=${startDate}/${endDate}&details=Call+scheduled+from+website&add=meet@google.com&ctz=local`;
-    
+
     // Open Google Calendar in a new tab
     window.open(calendarURL, "_blank");
-    
+
     setIsLoading(false);
   };
 
@@ -133,17 +135,6 @@ export default function Footer() {
             </p>
             <div className="flex items-center space-x-4">
               <Link
-                href="https://dribbble.com/Rashini_Kaweesha"
-                className="text-[#000000] hover:text-[#007BFF]"
-              >
-                <Image
-                  src="/Dribbble.svg"
-                  alt="Dribbble"
-                  width={30}
-                  height={30}
-                />
-              </Link>
-              <Link
                 href="https://www.behance.net/rashiamarasingha"
                 className="text-[#000000] hover:text-[#007BFF]"
               >
@@ -155,11 +146,17 @@ export default function Footer() {
                 />
               </Link>
               <Link
-                href="https://x.com/RashiniKaweesha"
+                href="https://dribbble.com/Rashini_Kaweesha"
                 className="text-[#000000] hover:text-[#007BFF]"
               >
-                <Image src="/X.svg" alt="X" width={30} height={30} />
+                <Image
+                  src="/Dribbble.svg"
+                  alt="Dribbble"
+                  width={30}
+                  height={30}
+                />
               </Link>
+
               <Link
                 href="https://www.linkedin.com/in/rashini-kaweesha"
                 className="text-[#000000] hover:text-[#007BFF]"
@@ -170,6 +167,12 @@ export default function Footer() {
                   width={30}
                   height={30}
                 />
+              </Link>
+              <Link
+                href="https://x.com/RashiniKaweesha"
+                className="text-[#000000] hover:text-[#007BFF]"
+              >
+                <Image src="/X.svg" alt="X" width={30} height={30} />
               </Link>
             </div>
           </div>

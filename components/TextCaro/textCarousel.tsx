@@ -20,7 +20,7 @@ const MarqueeCarousel = () => {
         }}
         transition={{
           repeat: Infinity,
-          duration: 10,
+          duration: 15,
           ease: "linear"
         }}
       >
