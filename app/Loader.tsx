@@ -27,7 +27,7 @@ const Loader: React.FC<LoaderProps> = ({ minimumLoaderTime = 2000 }) => {
       {/* You can replace this with your own logo or custom loading animation */}
       <div className="mb-4 relative w-24 h-24">
         <Image 
-          src="/logo.svg" 
+          src="/Logo.svg" 
           alt="Rashini Kaveesha" 
           fill 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
