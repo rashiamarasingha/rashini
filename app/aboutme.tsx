@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 export default function AboutMe() {
   return (
-    <main className="bg-white" id="about-me">
-      <div className="container mx-auto  pt-8 ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-16  items-center">
+    <main className="bg-white py-16 px-4 md:px-8" id="about-me">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-16 items-center">
           <motion.div
             className="order-2 md:order-1 overflow-hidden relative"
             initial={{ opacity: 0, x: -50 }}
@@ -67,7 +67,7 @@ export default function AboutMe() {
               >
                 <Button
                   variant="outline"
-                  className="rounded-full font-urbanist py-6 px-12 hover:bg-white border-[#171717] font-semibold text-[#171717] text-[22px]"
+                  className="rounded-full font-urbanist py-6 px-12 border-[#171717] font-semibold text-[#171717] text-[22px] hover:bg-transparent hover:border-[#171717] hover:text-[#171717] hover:shadow-none"
                 >
                   About Me
                 </Button>
