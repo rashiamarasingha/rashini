@@ -44,8 +44,8 @@ export const Home = (): JSX.Element => {
   ];
 
   return (
-    <main className="w-full  md:min-h-[800px] lg:min-h-[900px] bg-[#f0f7ff] overflow-hidden  flex justify-center">
-      <div className="flex flex-col items-center relative pt-5 bg-[#F0F7FF] w-full max-w-[1440px] px-4 md:px-6">
+    <main className="w-full  md:min-h-[700px] lg:min-h-[800px] bg-[#f0f7ff] overflow-hidden  flex justify-center">
+      <div className="flex flex-col items-center relative pt-5 bg-[#F0F7FF] w-full max-w-[1000px] px-4 md:px-6">
         {/* Navigation Bar - Increased height */}
         <nav className="w-full max-w-[1298px] h-auto md:h-[70px] flex items-center justify-between px-4 md:px-8 py-3 md:py-0 relative bg-[#FFFFFF] rounded-[30px] md:rounded-[50px] border-[none] backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] z-50">
           {/* Logo */}
@@ -79,7 +79,7 @@ export const Home = (): JSX.Element => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center space-x-1 md:space-x-3 ">
+          <div className="hidden md:flex items-center justify-center space-x-1 md:space-x-3">
             {navItems.map((item) => (
               <Button
                 key={item.name}
@@ -220,7 +220,7 @@ export const Home = (): JSX.Element => {
         </section>
 
         {/* Call to Action Buttons */}
-        <Card className="w-[90%] max-w-[450px] mx-auto md:absolute md:bottom-16 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col sm:flex-row h-auto sm:h-[82px] items-center justify-center gap-3 sm:gap-2.5 p-3 sm:p-2.5 bg-[#ffffff1a] rounded-[8px] overflow-hidden backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] mb-8 md:mb-0 z-20 relative">
+        <Card className="w-[90%] max-w-[450px] mx-auto md:absolute md:bottom-5 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col sm:flex-row h-auto sm:h-[72px] items-center justify-center gap-3 sm:gap-2.5 p-3 sm:p-2.5 bg-[#ffffff1a] rounded-[8px] overflow-hidden backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] mb-8 md:mb-0 z-20 relative">
           <CardContent className="p-1 flex flex-col sm:flex-row w-full gap-3 ">
             <Button className="w-full sm:w-56 flex items-center justify-center px-4 py-2 sm:px-6 sm:py-6 bg-[#007bff] rounded-[8px] overflow-hidden border-[0.5px] border-solid border-[#cfd4dc]">
               <a

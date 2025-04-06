@@ -71,7 +71,7 @@ export default function Footer() {
                   src="/Logo.svg"
                   alt="UX Research"
                   width={100}
-                  height={84}
+                  height={80}
                   className="rounded-md w-[81px] h-[84px]"
                 />
               </Link>

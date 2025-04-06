@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 
 interface LoaderProps {
   minimumLoaderTime?: number;
@@ -25,14 +24,22 @@ const Loader: React.FC<LoaderProps> = ({ minimumLoaderTime = 2000 }) => {
   return (
     <div className="fixed inset-0 bg-white dark:bg-black z-50 flex flex-col items-center justify-center">
       {/* You can replace this with your own logo or custom loading animation */}
-      <div className="mb-4 relative w-24 h-24">
-        <Image 
+      <div className="mb-4 relative w-100 h-100">
+        {/* <Image 
           src="/Logo.svg" 
           alt="Rashini Kaveesha" 
           fill 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain"
           priority
+        /> */}
+        <video
+          src="/Loader.mp4"
+          className="w-full h-full object-contain"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </div>
       
