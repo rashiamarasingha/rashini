@@ -68,7 +68,7 @@ export default function Footer() {
             <div className="flex items-center mb-4 md:mb-0">
               <Link href="/">
                 <Image
-                  src="/Logo.svg"
+                  src="/Logo2.svg"
                   alt="UX Research"
                   width={100}
                   height={80}

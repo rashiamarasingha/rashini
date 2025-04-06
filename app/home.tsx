@@ -53,7 +53,7 @@ export const Home = (): JSX.Element => {
             <div className="relative h-10 md:h-[40px] flex items-center">
               <Link href="/">
                 <Image
-                  src="/Logo.svg"
+                  src="/Logo1.svg"
                   alt="UX Research"
                   width={70}
                   height={40}
@@ -88,7 +88,7 @@ export const Home = (): JSX.Element => {
               >
                 <a
                   href={item.href}
-                  className={`[font-family:'Inter',Helvetica] text-base font-medium lg:text-[20px] tracking-[-0.30px] ${
+                  className={`[font-family:'Inter',Helvetica] text-base font-medium lg:text-[18px] tracking-[-0.30px] ${
                     item.active
                       ? "text-[#007BFF] font-bold"
                       : "text-[#2E2E2E] font-medium hover:text-[#007BFF]"
