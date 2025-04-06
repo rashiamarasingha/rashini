@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react"; // Added ArrowUpRight import
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
+  // Add state to track which icon is clicked with proper typing
+  const [clickedIcon, setClickedIcon] = useState<string | null>(null);
 
   // Function to open Google Calendar with Meet creation
   const handleBookCall = (
@@ -30,6 +32,16 @@ export default function Footer() {
     window.open(calendarURL, "_blank");
 
     setIsLoading(false);
+  };
+
+  // Handle icon click with proper TypeScript typing
+  const handleIconClick = (iconName: string): void => {
+    setClickedIcon(iconName);
+    
+    // Reset the clicked state after a short delay (for visual feedback)
+    setTimeout(() => {
+      setClickedIcon(null);
+    }, 300);
   };
 
   return (
@@ -81,7 +93,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/"
-                    className="text-[#000000] font-inter font-medium lg:text-[22px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Home
                   </Link>
@@ -89,7 +101,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#about-me"
-                    className="text-[#000000] font-inter font-medium lg:text-[22px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
                   >
                     About me
                   </Link>
@@ -97,7 +109,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#services"
-                    className="text-[#000000] font-inter font-medium lg:text-[22px] hhover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Services
                   </Link>
@@ -105,7 +117,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#projects"
-                    className="text-[#000000] font-inter font-medium lg:text-[22px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Projects
                   </Link>
@@ -113,7 +125,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#blogs"
-                    className="text-[#000000] font-inter font-medium lg:text-[22px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Blogs
                   </Link>
@@ -121,7 +133,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#contact"
-                    className="text-[#000000] font-inter font-medium lg:text-[22px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Contact me
                   </Link>
@@ -136,43 +148,63 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <Link
                 href="https://www.behance.net/rashiamarasingha"
-                className="text-[#000000] hover:text-[#007BFF]"
+                className="transition-transform active:scale-95"
+                onClick={() => handleIconClick('behance')}
               >
-                <Image
-                  src="/Behance.png"
-                  alt="Behance"
-                  width={30}
-                  height={30}
-                />
+                <div className={`transition-colors duration-300 ${clickedIcon === 'behance' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                  <Image
+                    src="/Behance.png"
+                    alt="Behance"
+                    width={30}
+                    height={30}
+                    style={{ filter: clickedIcon === 'behance' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                  />
+                </div>
               </Link>
               <Link
                 href="https://dribbble.com/Rashini_Kaweesha"
-                className="text-[#000000] hover:text-[#007BFF]"
+                className="transition-transform active:scale-95"
+                onClick={() => handleIconClick('dribbble')}
               >
-                <Image
-                  src="/Dribbble.png"
-                  alt="Dribbble"
-                  width={30}
-                  height={30}
-                />
+                <div className={`transition-colors duration-300 ${clickedIcon === 'dribbble' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                  <Image
+                    src="/Dribbble.png"
+                    alt="Dribbble"
+                    width={30}
+                    height={30}
+                    style={{ filter: clickedIcon === 'dribbble' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                  />
+                </div>
               </Link>
-
               <Link
                 href="https://www.linkedin.com/in/rashini-kaweesha"
-                className="text-[#000000] hover:text-[#007BFF]"
+                className="transition-transform active:scale-95"
+                onClick={() => handleIconClick('linkedin')}
               >
-                <Image
-                  src="/Linkedin.png"
-                  alt="LinkedIn"
-                  width={30}
-                  height={30}
-                />
+                <div className={`transition-colors duration-300 ${clickedIcon === 'linkedin' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                  <Image
+                    src="/Linkedin.png"
+                    alt="LinkedIn"
+                    width={30}
+                    height={30}
+                    style={{ filter: clickedIcon === 'linkedin' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                  />
+                </div>
               </Link>
               <Link
                 href="https://x.com/RashiniKaweesha"
-                className="text-[#000000] hover:text-[#007BFF]"
+                className="transition-transform active:scale-95"
+                onClick={() => handleIconClick('x')}
               >
-                <Image src="/X.svg" alt="X" width={30} height={30} />
+                <div className={`transition-colors duration-300 ${clickedIcon === 'x' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                  <Image 
+                    src="/X.svg" 
+                    alt="X" 
+                    width={30} 
+                    height={30}
+                    style={{ filter: clickedIcon === 'x' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                  />
+                </div>
               </Link>
             </div>
           </div>

@@ -57,8 +57,8 @@ export default function ServicesSection() {
       icon: (
         <Image
           src="/Services1.png"
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           alt="UI/UX Design"
         />
       ),
@@ -76,8 +76,8 @@ export default function ServicesSection() {
       icon: (
         <Image
           src="/Services2.png"
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           alt="Creative Design"
         />
       ),
@@ -93,7 +93,7 @@ export default function ServicesSection() {
     },
     {
       icon: (
-        <Image src="/Services3.png" width={40} height={40} alt="Corporate Branding" />
+        <Image src="/Services3.png" width={50} height={50} alt="Corporate Branding" />
       ),
       title: "Corporate Branding",
       description: "Creating memorable brand identities that stand out.",
@@ -107,8 +107,8 @@ export default function ServicesSection() {
       icon: (
         <Image
           src="/Services4.png"
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           alt="Social Media"
         />
       ),

@@ -58,38 +58,40 @@ export default function Blogs() {
         </motion.p>
       </motion.section>
 
-      {/* Blog Cards */}
+      {/* Blog Cards - FIXED ALIGNMENT */}
       <section className="container mx-auto px-4 pt-2 pb-6">
         <div className="grid md:grid-cols-2 gap-6">
           {/* Card 1 - Bottom to Top Animation */}
           <motion.div 
-            className="bg-[#F0F7FF] rounded-xl p-6 flex lg:flex-row flex-col items-center h-full"
+            className="bg-[#F0F7FF] rounded-xl p-6 flex lg:flex-row flex-col items-start h-full"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="lg:w-1/3 xl:w-[276px] mb-4 lg:mb-0 lg:h-[250px] lg:mr-6">
+            <div className="lg:w-1/3 xl:w-[276px] mb-4 lg:mb-0 lg:mr-6 flex-shrink-0">
               <Image
                 src="/PlaceholderImage.jpg"
                 alt="UI/UX Design Trends"
                 width={300}
                 height={150}
-                className="rounded-md lg:w-[150px] xl:w-[276px] lg:h-[250px] xl:h-[250px]"
+                className="rounded-md lg:w-[150px] xl:w-[276px] lg:h-[250px] xl:h-[250px] object-cover"
               />
             </div>
-            <div className="lg:w-2/3 flex flex-col">
-              <h2 className="font-inter text-[24px] font-bold text-[#1C1C57] mb-2">
-                Unveiling the Latest UI/UX Design Trends
-              </h2>
-              <p className="text-[#1C1C57] font-inter font-normal text-[14px] mb-4 flex-grow">
-                Embark on a journey into the future of digital design as we
-                uncover the most innovative UI/UX trends shaping the landscape
-                in 2024.
-              </p>
+            <div className="lg:w-2/3 flex flex-col h-full justify-between">
+              <div>
+                <h2 className="font-inter text-[24px] font-bold text-[#1C1C57] mb-2">
+                  Unveiling the Latest UI/UX Design Trends
+                </h2>
+                <p className="text-[#1C1C57] font-inter font-normal text-[14px] mb-4">
+                  Embark on a journey into the future of digital design as we
+                  uncover the most innovative UI/UX trends shaping the
+                  landscape in 2024.
+                </p>
+              </div>
               <Link
-                href=" https://medium.com/@rashinikaweesha47/unveiling-the-latest-ui-ux-design-trends-in-2024-c36dccbd8f5a"
-                className="text-blue-500 hover:text-blue-700 flex items-center text-[16px] font-inter font-normal"
+                href="https://medium.com/@rashinikaweesha47/unveiling-the-latest-ui-ux-design-trends-in-2024-c36dccbd8f5a"
+                className="text-blue-500 hover:text-blue-700 flex items-center text-[16px] font-inter font-normal mt-auto"
               >
                 Read more <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
@@ -98,33 +100,35 @@ export default function Blogs() {
 
           {/* Card 2 - Bottom to Top Animation with slight delay */}
           <motion.div 
-            className="bg-[#F0F7FF] rounded-xl p-6 flex lg:flex-row flex-col items-center h-full"
+            className="bg-[#F0F7FF] rounded-xl p-6 flex lg:flex-row flex-col items-start h-full"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           >
-            <div className="lg:w-1/3 xl:w-[276px] mb-4 lg:mb-0 lg:h-[250px] lg:mr-6">
+            <div className="lg:w-1/3 xl:w-[276px] mb-4 lg:mb-0 lg:mr-6 flex-shrink-0">
               <Image
-                src="Research.svg"
+                src="/Research.svg"
                 alt="UX Research"
                 width={300}
-                height={150}
-                className="rounded-md lg:w-[150px] xl:w-[276px] lg:h-[250px] xl:h-[250px]"
+                height={220}
+                className="rounded-md lg:w-[150px] xl:w-[276px] lg:h-[250px] xl:h-[250px] object-cover"
               />
             </div>
-            <div className="lg:w-2/3 flex flex-col">
-              <h2 className="font-inter text-[24px] font-bold text-[#1C1C57] mb-2">
-                A Beginner&apos;s Guide to UX Research: Methods & Best
-                Practices.
-              </h2>
-              <p className="text-[#1C1C57] font-inter font-normal text-[14px] mb-4 flex-grow">
-                Ever wondered why some apps feel incredibly intuitive while
-                others frustrate you?
-              </p>
+            <div className="lg:w-2/3 flex flex-col h-full justify-between">
+              <div>
+                <h2 className="font-inter text-[24px] font-bold text-[#1C1C57] mb-2">
+                  A Beginner&apos;s Guide to UX Research: Methods & Best
+                  Practices.
+                </h2>
+                <p className="text-[#1C1C57] font-inter font-normal text-[14px] mb-4">
+                  Ever wondered why some apps feel incredibly intuitive while
+                  others frustrate you?
+                </p>
+              </div>
               <Link
                 href="https://medium.com/@rashinikaweesha47/a-beginners-guide-to-ux-research-methods-best-practices-94c5289a1e85"
-                className="text-blue-500 hover:text-blue-700 flex items-center text-[16px] font-inter font-normal"
+                className="text-blue-500 hover:text-blue-700 flex items-center text-[16px] font-inter font-normal mt-auto"
               >
                 Read more <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
