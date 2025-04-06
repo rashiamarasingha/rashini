@@ -44,8 +44,8 @@ export const Home = (): JSX.Element => {
   ];
 
   return (
-    <main className="w-full  md:min-h-[700px] lg:min-h-[800px] bg-[#f0f7ff] overflow-hidden  flex justify-center">
-      <div className="flex flex-col items-center relative pt-5 bg-[#F0F7FF] w-full max-w-[1000px] px-4 md:px-6">
+    <main className="w-full md:min-h-[700px] lg:min-h-[800px] bg-[#f0f7ff] overflow-hidden flex justify-center">
+      <div className="flex flex-col items-center relative pt-3 bg-[#F0F7FF] w-full max-w-[1000px] px-4 md:px-6">
         {/* Navigation Bar - Increased height */}
         <nav className="w-full max-w-[1298px] h-auto md:h-[70px] flex items-center justify-between px-4 md:px-8 py-3 md:py-0 relative bg-[#FFFFFF] rounded-[30px] md:rounded-[50px] border-[none] backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] z-50">
           {/* Logo */}
@@ -88,7 +88,7 @@ export const Home = (): JSX.Element => {
               >
                 <a
                   href={item.href}
-                  className={`[font-family:'Inter',Helvetica] text-base font-medium lg:text-[18px] tracking-[-0.30px] ${
+                  className={`[font-family:'Inter',Helvetica] text-base font-medium lg:text-[16px] tracking-[-0.30px] ${
                     item.active
                       ? "text-[#007BFF] font-bold"
                       : "text-[#2E2E2E] font-medium hover:text-[#007BFF]"
@@ -127,12 +127,12 @@ export const Home = (): JSX.Element => {
         )}
 
         {/* Hero Section */}
-        <section className="relative w-full py-6 mt-4 md:mt-0 md:py-12 lg:py-10">
+        <section className="relative w-full py-4 mt-2 md:mt-0 md:py-6 lg:py-8">
           <div className="relative w-full max-w-[1125px] mx-auto">
             {/* Hero Text Content */}
             <div className="flex flex-col items-center text-center px-4 z-10 relative">
               {/* Hello Badge */}
-              <div className="relative mb-4">
+              <div className="relative mb-1">
                 <Card className="inline-flex h-8 sm:h-10 md:h-[45px] items-center justify-center px-4 md:px-6 py-1 md:py-3 bg-[#ffffff1a] rounded-[38.24px] overflow-hidden border-[1.27px] border-solid border-neutral-900">
                   <CardContent className="p-0">
                     <div className="[font-family:'Lufga-Medium',Helvetica] font-medium text-gray-900 text-base md:text-xl tracking-[-0.30px]">
@@ -150,7 +150,7 @@ export const Home = (): JSX.Element => {
               </div>
 
               {/* Main Heading */}
-              <h1 className="font-urbanist font-semibold text-gray-900 text-3xl sm:text-4xl md:text-6xl lg:text-[95.6px] text-center tracking-[-0.8px] md:tracking-[-1.43px] leading-tight md:leading-[1.1] mb-6 md:mb-8">
+              <h1 className="font-urbanist font-semibold text-gray-900 text-3xl sm:text-4xl md:text-6xl lg:text-[70px] text-center tracking-[-0.8px] md:tracking-[-1.43px] leading-tight md:leading-[1.1] mb-6 md:mb-8 mt-1">
                 <span className="text-neutral-900">I&apos;m </span>
                 <span className="text-[#007bff]">Rashini</span>
                 <span className="text-neutral-900">
@@ -162,7 +162,7 @@ export const Home = (): JSX.Element => {
               </h1>
 
               <Image
-                className="hidden md:block absolute w-[40px] md:w-[86px] h-[40px] md:h-[88px] top-[180px] md:top-[236px] left-[5%] md:left-[31px]"
+                className="hidden md:block absolute w-[40px] md:w-[86px] h-[40px] md:h-[88px] top-[180px] md:top-[180px] left-[5%] md:left-[140px]"
                 alt="Vector"
                 src="/vector-2.svg"
                 width={86}
@@ -186,56 +186,39 @@ export const Home = (): JSX.Element => {
               </p>
             </div>
 
-            {/* Profile Image Section */}
-            <div className="mt-8 md:mt-0 md:absolute md:w-[952px] md:h-[636px] md:top-[170px] md:left-[173px] flex justify-center">
-              <div className="relative w-full md:w-[1018px] h-auto md:h-[688px]">
-                {/* <Image
-                  className="hidden md:block absolute w-[812px] h-[406px] top-[255px] left-[118px]"
-                  alt="Ellipse"
-                  src="/ellipse-2.svg"
-                  width={812}
-                  height={406}
-                /> */}
-
+            {/* Profile Image Section - UPDATED FOR CENTERING */}
+            <div className="mt-8 md:mt-0 md:absolute md:w-full md:h-[736px] md:top-[190px] flex justify-center items-center">
+              <div className="relative w-full md:w-full h-auto md:h-[688px] flex justify-center">
                 {/* Profile Image */}
                 <Image
-                  className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-none md:w-[952px] md:h-[636px] md:absolute md:top-6 lg:top-32 md:-left-[70px] object-contain mx-auto"
+                  className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-none md:w-[852px] md:h-[636px] object-contain mx-auto"
                   alt="Young pretty woman"
-                  // src="/young-pretty-woman-looking-happy-goofy-with-broad-fun-loony-smil.png"
                   src="/rashiniScratch.png"
                   width={952}
                   height={636}
                 />
-
-                {/* <Image
-                  className="hidden md:block absolute w-7 h-6 top-[468px] left-96"
-                  alt="Vector"
-                  src="/vector.svg"
-                  width={28}
-                  height={24}
-                /> */}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Call to Action Buttons */}
-        <Card className="w-[90%] max-w-[450px] mx-auto md:absolute md:bottom-5 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col sm:flex-row h-auto sm:h-[72px] items-center justify-center gap-3 sm:gap-2.5 p-3 sm:p-2.5 bg-[#ffffff1a] rounded-[8px] overflow-hidden backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] mb-8 md:mb-0 z-20 relative">
-          <CardContent className="p-1 flex flex-col sm:flex-row w-full gap-3 ">
-            <Button className="w-full sm:w-56 flex items-center justify-center px-4 py-2 sm:px-6 sm:py-6 bg-[#007bff] rounded-[8px] overflow-hidden border-[0.5px] border-solid border-[#cfd4dc]">
+        {/* Call to Action Buttons - UPDATED WITH REDUCED GAPS */}
+        <Card className="w-[85%] max-w-[400px] mx-auto md:absolute md:bottom-5 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col sm:flex-row h-auto sm:h-[50px] items-center justify-center gap-2 sm:gap-1 p-1 sm:p-1 bg-[#ffffff1a] rounded-[8px] overflow-hidden backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] mb-8 md:mb-0 z-20 relative">
+          <CardContent className="p-0.5 flex flex-col sm:flex-row w-full gap-2 sm:gap-3">
+            <Button className="w-full sm:w-[48%] flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-1.5 bg-[#007bff] rounded-[8px] overflow-hidden border-[0.5px] border-solid border-[#cfd4dc] h-[40px]">
               <a
                 href="#projects"
-                className="[font-family:'Inter',Helvetica] font-medium text-white text-base sm:text-lg lg:text-[24px] tracking-[-0.39px] leading-[normal] mr-2"
+                className="[font-family:'Inter',Helvetica] font-medium text-white text-sm sm:text-base tracking-[-0.30px] leading-[normal]"
               >
                 View My Work
               </a>
             </Button>
             <Button
               variant="ghost"
-              className="w-full sm:w-56 sm:flex-1 flex font-medium items-center justify-center gap-2.5 px-4 py-2 sm:px-6 sm:py-6 rounded-[8px] overflow-hidden"
+              className="w-full sm:w-[48%] flex font-medium items-center justify-center gap-1 px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-[8px] overflow-hidden h-[40px] border-[0.5px] border-solid border-[#cfd4dc]"
             >
-              <Link  href="https://www.linkedin.com/in/rashini-kaweesha" className="[font-family:'Inter',Helvetica] font-light text-black text-base sm:text-lg lg:text-[24px] tracking-[-0.39px] leading-[normal]">
-              Let&apos;s Connect
+              <Link href="https://www.linkedin.com/in/rashini-kaweesha" className="[font-family:'Inter',Helvetica] font-light text-black text-sm sm:text-base tracking-[-0.30px] leading-[normal]">
+                Let&apos;s Connect
               </Link>
             </Button>
           </CardContent>

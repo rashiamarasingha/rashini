@@ -139,7 +139,7 @@ export default function Footer() {
                 className="text-[#000000] hover:text-[#007BFF]"
               >
                 <Image
-                  src="/Behance.svg"
+                  src="/Behance.png"
                   alt="Behance"
                   width={30}
                   height={30}
@@ -150,7 +150,7 @@ export default function Footer() {
                 className="text-[#000000] hover:text-[#007BFF]"
               >
                 <Image
-                  src="/Dribbble.svg"
+                  src="/Dribbble.png"
                   alt="Dribbble"
                   width={30}
                   height={30}
@@ -162,7 +162,7 @@ export default function Footer() {
                 className="text-[#000000] hover:text-[#007BFF]"
               >
                 <Image
-                  src="/Linkedin.svg"
+                  src="/Linkedin.png"
                   alt="LinkedIn"
                   width={30}
                   height={30}

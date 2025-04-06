@@ -113,7 +113,7 @@ export default function AboutMe() {
                     name: "LinkedIn",
                     icon: (
                       <Image
-                        src="/LinkedinMini.svg"
+                        src="/LinkedinMini.png"
                         alt="LinkedIn"
                         width={20}
                         height={20}
@@ -126,7 +126,7 @@ export default function AboutMe() {
                     name: "Behance",
                     icon: (
                       <Image
-                        src="/BehanceMini.svg"
+                        src="/BehanceMini.png"
                         alt="Behance"
                         width={20}
                         height={20}
@@ -139,7 +139,7 @@ export default function AboutMe() {
                     name: "Dribbble",
                     icon: (
                       <Image
-                        src="/DribbbleMini.svg"
+                        src="/DribbbleMini.png"
                         alt="Dribbble"
                         width={20}
                         height={20}
