@@ -8,6 +8,8 @@ export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
   // Add state to track which icon is clicked with proper typing
   const [clickedIcon, setClickedIcon] = useState<string | null>(null);
+  // New state to track which icon is being hovered
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
 
   // Function to open Google Calendar with Meet creation
   const handleBookCall = (
@@ -37,63 +39,66 @@ export default function Footer() {
   // Handle icon click with proper TypeScript typing
   const handleIconClick = (iconName: string): void => {
     setClickedIcon(iconName);
-    
+
     // Reset the clicked state after a short delay (for visual feedback)
     setTimeout(() => {
       setClickedIcon(null);
     }, 300);
   };
 
+  // Blue filter for social media icons
+  const blueFilter = "invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)";
+
   return (
     <footer className="w-full">
       {/* Blue banner section with more curved top corners */}
       <div
-        className="bg-[#007BFF] py-8 px-4 md:px-8  rounded-t-3xl"
+        className="bg-[#007BFF] py-6 sm:py-8 px-4 sm:px-6 md:px-8 rounded-t-3xl"
         id="contact"
       >
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <h2 className="text-white font-urbanist text-2xl md:text-3xl lg:text-[45px] font-semibold mb-4 md:mb-0">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+          <h2 className="text-white font-urbanist text-xl sm:text-2xl md:text-3xl lg:text-[45px] font-semibold text-center md:text-left">
             Let&apos;s Work Together
           </h2>
-          <div className="flex flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Link
               href="mailto:rashinikaweesha47@gmail.com?subject=Inquiry from Website&body=Hello, I'd like to discuss a project with you."
-              className="flex items-center font-urbanist font-medium md:text-[20px] justify-center gap-2 text-white border border-white rounded-[8px] px-5 py-2 transition-colors"
+              className="flex items-center font-urbanist font-medium text-sm sm:text-base md:text-[20px] justify-center gap-2 text-white border border-white rounded-[8px] px-3 sm:px-5 py-2 transition-colors hover:bg-blue-600 duration-300 w-full sm:w-auto"
             >
               <span>Send a mail</span>
-              <ArrowUpRight className="h-6 w-6" />
+              <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             </Link>
             <button
               onClick={handleBookCall}
-              className="flex items-center font-urbanist font-medium md:text-[20px] justify-center gap-2 bg-white text-[#007BFF] rounded-[8px] px-5 py-2 transition-colors"
+              className="flex items-center font-urbanist font-medium text-sm sm:text-base md:text-[20px] justify-center gap-2 bg-white text-[#007BFF] rounded-[8px] px-3 sm:px-5 py-2 transition-colors hover:bg-gray-100 duration-300 w-full sm:w-auto"
               disabled={isLoading}
             >
               <span>{isLoading ? "Opening Calendar..." : "Book a call"}</span>
-              <ArrowUpRight className="h-6 w-6" />
+              <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             </button>
           </div>
         </div>
       </div>
-      <div className="bg-[#F5FCFF] py-8 px-8 mt-auto">
-        <div className="container mx-auto ">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-            <div className="flex items-center mb-4 md:mb-0">
+      <div className="bg-[#F5FCFF] py-6 sm:py-8 px-4 sm:px-6 md:px-8 mt-auto">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 md:gap-0">
+            <div className="flex items-center">
               <Link href="/">
                 <Image
                   src="/Logo2.svg"
                   alt="UX Research"
                   width={100}
                   height={80}
-                  className="rounded-md w-[81px] h-[84px]"
+                  className="rounded-md w-[60px] h-[62px] sm:w-[70px] sm:h-[72px] md:w-[81px] md:h-[84px]"
                 />
               </Link>
             </div>
-            <nav>
-              <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <nav className="w-full md:w-auto">
+              <ul className="flex flex-wrap justify-center md:justify-end gap-x-4 sm:gap-x-6 gap-y-2 text-center">
                 <li>
                   <Link
                     href="/"
-                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium text-sm sm:text-base lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Home
                   </Link>
@@ -101,7 +106,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#about-me"
-                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium text-sm sm:text-base lg:text-[18px] hover:text-[#007BFF]"
                   >
                     About me
                   </Link>
@@ -109,7 +114,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#services"
-                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium text-sm sm:text-base lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Services
                   </Link>
@@ -117,7 +122,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#projects"
-                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium text-sm sm:text-base lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Projects
                   </Link>
@@ -125,7 +130,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#blogs"
-                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium text-sm sm:text-base lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Blogs
                   </Link>
@@ -133,7 +138,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="#contact"
-                    className="text-[#000000] font-inter font-medium lg:text-[18px] hover:text-[#007BFF]"
+                    className="text-[#000000] font-inter font-medium text-sm sm:text-base lg:text-[18px] hover:text-[#007BFF]"
                   >
                     Contact me
                   </Link>
@@ -141,68 +146,111 @@ export default function Footer() {
               </ul>
             </nav>
           </div>
-          <div className="border-t border-[#007BFF] pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-[#000000] font-inter font-medium lg:text-[19px] text-sm mb-4 md:mb-0">
+          <div className="border-t border-[#007BFF] pt-4 sm:pt-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+            <p className="text-[#000000] font-inter font-medium text-xs sm:text-sm lg:text-[19px] mb-0 text-center md:text-left">
               © 2025 RK.Design Studio. All Rights Reserved.
             </p>
             <div className="flex items-center space-x-4">
+              {/* Behance */}
               <Link
                 href="https://www.behance.net/rashiamarasingha"
                 className="transition-transform active:scale-95"
-                onClick={() => handleIconClick('behance')}
+                onClick={() => handleIconClick("behance")}
+                onMouseEnter={() => setHoveredIcon("behance")}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className={`transition-colors duration-300 ${clickedIcon === 'behance' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                <div className="transition-duration-300">
                   <Image
                     src="/Behance.png"
                     alt="Behance"
-                    width={30}
-                    height={30}
-                    style={{ filter: clickedIcon === 'behance' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                    style={{
+                      filter:
+                        hoveredIcon === "behance" || clickedIcon === "behance"
+                          ? blueFilter
+                          : "none",
+                      transition: "filter 0.3s",
+                    }}
                   />
                 </div>
               </Link>
+              
+              {/* Dribbble */}
               <Link
                 href="https://dribbble.com/Rashini_Kaweesha"
                 className="transition-transform active:scale-95"
-                onClick={() => handleIconClick('dribbble')}
+                onClick={() => handleIconClick("dribbble")}
+                onMouseEnter={() => setHoveredIcon("dribbble")}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className={`transition-colors duration-300 ${clickedIcon === 'dribbble' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                <div className="transition-duration-300">
                   <Image
                     src="/Dribbble.png"
                     alt="Dribbble"
-                    width={30}
-                    height={30}
-                    style={{ filter: clickedIcon === 'dribbble' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                    style={{
+                      filter:
+                        hoveredIcon === "dribbble" || clickedIcon === "dribbble"
+                          ? blueFilter
+                          : "none",
+                      transition: "filter 0.3s",
+                    }}
                   />
                 </div>
               </Link>
+              
+              {/* LinkedIn */}
               <Link
                 href="https://www.linkedin.com/in/rashini-kaweesha"
                 className="transition-transform active:scale-95"
-                onClick={() => handleIconClick('linkedin')}
+                onClick={() => handleIconClick("linkedin")}
+                onMouseEnter={() => setHoveredIcon("linkedin")}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className={`transition-colors duration-300 ${clickedIcon === 'linkedin' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
+                <div className="transition-duration-300">
                   <Image
                     src="/Linkedin.png"
                     alt="LinkedIn"
-                    width={30}
-                    height={30}
-                    style={{ filter: clickedIcon === 'linkedin' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                    style={{
+                      filter:
+                        hoveredIcon === "linkedin" || clickedIcon === "linkedin"
+                          ? blueFilter
+                          : "none",
+                      transition: "filter 0.3s",
+                    }}
                   />
                 </div>
               </Link>
+              
+              {/* X (Twitter) */}
               <Link
                 href="https://x.com/RashiniKaweesha"
                 className="transition-transform active:scale-95"
-                onClick={() => handleIconClick('x')}
+                onClick={() => handleIconClick("x")}
+                onMouseEnter={() => setHoveredIcon("x")}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className={`transition-colors duration-300 ${clickedIcon === 'x' ? 'text-[#007BFF]' : 'text-[#000000]'}`}>
-                  <Image 
-                    src="/X.svg" 
-                    alt="X" 
-                    width={30} 
-                    height={30}
-                    style={{ filter: clickedIcon === 'x' ? 'invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)' : 'none' }}
+                <div className="transition-duration-300">
+                  <Image
+                    src="/X.svg"
+                    alt="X"
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8"
+                    style={{
+                      filter:
+                        hoveredIcon === "x" || clickedIcon === "x"
+                          ? blueFilter
+                          : "none",
+                      transition: "filter 0.3s",
+                    }}
                   />
                 </div>
               </Link>

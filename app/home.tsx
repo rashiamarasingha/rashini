@@ -208,7 +208,7 @@ export const Home = (): JSX.Element => {
         {/* Call to Action Buttons */}
         <Card className="w-[75%] sm:w-[85%] max-w-[400px] mx-auto md:absolute md:bottom-5 md:left-1/2 md:transform md:-translate-x-1/2 flex flex-col sm:flex-row h-auto sm:h-[50px] items-center justify-center gap-2 sm:gap-1 p-1 sm:p-1 bg-[#ffffff1a] rounded-[8px] overflow-hidden backdrop-blur-[7.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(7.5px)_brightness(100%)] mb-8 md:mb-0 z-20 relative">
           <CardContent className="p-0.5 flex flex-col sm:flex-row w-full gap-2 sm:gap-3">
-            <Button className="w-[100%] sm:w-[48%] mx-auto sm:mx-0 flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-1.5 bg-[#007bff] rounded-[8px] overflow-hidden border-[0.5px] border-solid border-[#cfd4dc] h-[40px]">
+            <Button className="w-[100%] sm:w-[48%] mx-auto sm:mx-0 flex items-center justify-center px-3 py-1.5 sm:px-4 sm:py-1.5 bg-[#007bff] hover:bg-blue-600 transition-colors duration-300 rounded-[8px] overflow-hidden border-[0.5px] border-solid border-[#cfd4dc] h-[40px]">
               <a
                 href="#projects"
                 className="font-['Inter',Helvetica] font-medium text-white text-sm sm:text-base tracking-[-0.30px] leading-[normal]"
@@ -218,11 +218,11 @@ export const Home = (): JSX.Element => {
             </Button>
             <Button
               variant="ghost"
-              className="w-[100%] sm:w-[48%] mx-auto sm:mx-0 flex font-medium items-center justify-center gap-1 px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-[8px] overflow-hidden h-[40px] border-[0.5px] border-solid border-[#cfd4dc]"
+              className="w-[100%] sm:w-[48%] mx-auto sm:mx-0 flex font-medium items-center justify-center gap-1 px-2 py-1.5 sm:px-3 sm:py-1.5 rounded-[8px] overflow-hidden h-[40px] border-[0.5px] border-solid border-[#cfd4dc] hover:bg-gray-100 hover:text-[#007bff] transition-colors duration-300"
             >
               <Link
                 href="https://www.linkedin.com/in/rashini-kaweesha"
-                className="font-['Inter',Helvetica] font-light text-black text-sm sm:text-base tracking-[-0.30px] leading-[normal]"
+                className="font-['Inter',Helvetica] font-light text-black hover:text-[#007bff] text-sm sm:text-base tracking-[-0.30px] leading-[normal]"
               >
                 Let&apos;s Connect
               </Link>
