@@ -234,7 +234,7 @@ export const Home = (): JSX.Element => {
       </div>
 
       {/* Desktop Quote Section - Positioned in Left Corner of the Screen */}
-      <div className="hidden md:flex md:flex-col md:items-start md:gap-4 lg:gap-6 md:absolute md:top-[38vh] lg:top-[46vh] md:left-[0vw] lg:left-[10vw] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] md:z-20">
+      <div className="hidden md:flex md:flex-col md:items-start md:gap-4 lg:gap-6 md:absolute md:top-[40vh] lg:top-[48vh] md:left-[0vw] lg:left-[10vw] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] md:z-20">
         <Image
           src="/quote-up.svg"
           alt="quote"
