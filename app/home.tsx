@@ -222,6 +222,8 @@ export const Home = (): JSX.Element => {
             >
               <Link
                 href="https://www.linkedin.com/in/rashini-kaweesha"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="font-['Inter',Helvetica] font-light text-black hover:text-[#007bff] text-sm sm:text-base tracking-[-0.30px] leading-[normal]"
               >
                 Let&apos;s Connect

@@ -154,6 +154,8 @@ export default function Footer() {
               {/* Behance */}
               <Link
                 href="https://www.behance.net/rashiamarasingha"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-transform active:scale-95"
                 onClick={() => handleIconClick("behance")}
                 onMouseEnter={() => setHoveredIcon("behance")}
@@ -180,6 +182,8 @@ export default function Footer() {
               {/* Dribbble */}
               <Link
                 href="https://dribbble.com/Rashini_Kaweesha"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-transform active:scale-95"
                 onClick={() => handleIconClick("dribbble")}
                 onMouseEnter={() => setHoveredIcon("dribbble")}
@@ -206,6 +210,8 @@ export default function Footer() {
               {/* LinkedIn */}
               <Link
                 href="https://www.linkedin.com/in/rashini-kaweesha"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-transform active:scale-95"
                 onClick={() => handleIconClick("linkedin")}
                 onMouseEnter={() => setHoveredIcon("linkedin")}
@@ -232,6 +238,8 @@ export default function Footer() {
               {/* X (Twitter) */}
               <Link
                 href="https://x.com/RashiniKaweesha"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-transform active:scale-95"
                 onClick={() => handleIconClick("x")}
                 onMouseEnter={() => setHoveredIcon("x")}
