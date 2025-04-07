@@ -237,7 +237,7 @@ export default function Footer() {
               
               {/* X (Twitter) */}
               <Link
-                href="https://x.com/RashiniKaweesha"
+                href="https://x.com/kaweesha86196"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-transform active:scale-95"
