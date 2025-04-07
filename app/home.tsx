@@ -232,7 +232,7 @@ export const Home = (): JSX.Element => {
       </div>
 
       {/* Desktop Quote Section - Positioned in Left Corner of the Screen */}
-      <div className="hidden md:flex md:flex-col md:items-start md:gap-4 lg:gap-6 md:absolute md:top-[32vh] lg:top-[40vh] md:left-[2vw] lg:left-[15vw] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] md:z-20">
+      <div className="hidden md:flex md:flex-col md:items-start md:gap-4 lg:gap-6 md:absolute md:top-[34vh] lg:top-[42vh] md:left-[3vw] lg:left-[16vw] md:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] md:z-20">
         <Image
           src="/quote-up.svg"
           alt="quote"
