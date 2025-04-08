@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
-  // Add state to track which icon is clicked with proper typing
   const [clickedIcon, setClickedIcon] = useState<string | null>(null);
   // New state to track which icon is being hovered
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
@@ -20,7 +19,6 @@ export default function Footer() {
 
     // Google Calendar URL to create a new event with Google Meet
     const now = new Date();
-    // Default event duration - 30 minutes
     const thirtyMinutesLater = new Date(now.getTime() + 30 * 60000);
 
     // Format dates for Google Calendar URL
@@ -36,7 +34,6 @@ export default function Footer() {
     setIsLoading(false);
   };
 
-  // Handle icon click with proper TypeScript typing
   const handleIconClick = (iconName: string): void => {
     setClickedIcon(iconName);
 
@@ -50,7 +47,7 @@ export default function Footer() {
   const blueFilter = "invert(42%) sepia(99%) saturate(1486%) hue-rotate(199deg) brightness(97%) contrast(108%)";
 
   return (
-    <footer className="w-full">
+    <footer className="w-full max-w-full overflow-hidden">
       {/* Blue banner section with more curved top corners */}
       <div
         className="bg-[#007BFF] py-6 sm:py-8 px-4 sm:px-6 md:px-8 rounded-t-3xl"
@@ -79,14 +76,14 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F5FCFF] py-6 sm:py-8 px-4 sm:px-6 md:px-8 mt-auto">
+      <div className="bg-[#F5FCFF] py-6 sm:py-8 px-4 sm:px-6 md:px-8">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-6 gap-4 md:gap-0">
             <div className="flex items-center">
               <Link href="/">
                 <Image
                   src="/Logo2.svg"
-                  alt="UX Research"
+                  alt="RK Design Logo"
                   width={100}
                   height={80}
                   className="rounded-md w-[60px] h-[62px] sm:w-[70px] sm:h-[72px] md:w-[81px] md:h-[84px]"
@@ -94,7 +91,7 @@ export default function Footer() {
               </Link>
             </div>
             <nav className="w-full md:w-auto">
-              <ul className="flex flex-wrap justify-center md:justify-end gap-x-4 sm:gap-x-6 gap-y-2 text-center">
+              <ul className="flex flex-wrap justify-center md:justify-end gap-x-3 sm:gap-x-4 lg:gap-x-6 gap-y-2 text-center">
                 <li>
                   <Link
                     href="/"
@@ -147,10 +144,10 @@ export default function Footer() {
             </nav>
           </div>
           <div className="border-t border-[#007BFF] pt-4 sm:pt-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
-            <p className="text-[#000000] font-inter font-medium text-xs sm:text-sm lg:text-[19px] mb-0 text-center md:text-left">
+            <p className="text-[#000000] font-inter font-medium text-xs sm:text-sm lg:text-[18px] mb-0 text-center md:text-left break-words">
               © 2025 RK.Design Studio. All Rights Reserved.
             </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               {/* Behance */}
               <Link
                 href="https://www.behance.net/rashiamarasingha"
