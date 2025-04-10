@@ -53,7 +53,7 @@ export default function ProjectsShowcase() {
       description:
         "A modern, intuitive interface for seamless interactions, smooth conversations, and an engaging experience with a visually appealing design.",
       image: "/ai-chatbot.jpg",
-      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design"
+      href: "https://www.behance.net/gallery/221738371/AI-Chatbot-Web-Application"
     },
   ];
 
@@ -81,7 +81,7 @@ export default function ProjectsShowcase() {
       description:
         "A mobile app revolutionising eye health management by providing a convenient tool for early detection of eye diseases.",
       image: "/ratina-wise.jpg",
-      href: "https://www.behance.net/gallery/221121985/Task-Management-System-UI-Design"
+      href: "https://www.behance.net/gallery/194533059/RetinaWise-Eye-Disease-Detecting-Mobile-App"
     },
   ];
 
@@ -208,7 +208,9 @@ export default function ProjectsShowcase() {
                     <div className="border rounded-[52px] border-none w-fit px-4 py-2 bg-linear-to-r from-[#8ec0f6] to-[#ffffff]">
                       <Link
                          href={`${project.href}`}
-                        className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter group cursor-pointer"
                       >
                         View project
                         <span
@@ -267,7 +269,9 @@ export default function ProjectsShowcase() {
                     <div className="border rounded-[52px] w-fit border-none px-4 py-2 bg-linear-to-r from-[#8ec0f6] to-[#ffffff]">
                       <Link
                          href={`${project.href}`}
-                        className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter  group"
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter group cursor-pointer"
                       >
                         View project
                         <span
@@ -288,11 +292,14 @@ export default function ProjectsShowcase() {
 
         <div className="mt-12 text-center">
           <div className="inline-block">
-            <Link href="https://www.behance.net/rashiamarasingha">
-
-            <Button  className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8">
-              Explore More
-            </Button>
+            <Link 
+              href="https://www.behance.net/rashiamarasingha" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8 cursor-pointer">
+                Explore More
+              </Button>
             </Link>
           </div>
         </div>

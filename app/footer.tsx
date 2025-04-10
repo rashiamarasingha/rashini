@@ -60,14 +60,14 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Link
               href="mailto:rashinikaweesha47@gmail.com?subject=Inquiry from Website&body=Hello, I'd like to discuss a project with you."
-              className="flex items-center font-urbanist font-medium text-sm sm:text-base md:text-[20px] justify-center gap-2 text-white border border-white rounded-[8px] px-3 sm:px-5 py-2 transition-colors hover:bg-blue-600 duration-300 w-full sm:w-auto"
+              className="flex items-center font-urbanist font-medium text-sm sm:text-base md:text-[20px] justify-center gap-2 text-white border border-white rounded-[8px] px-3 sm:px-5 py-2 transition-colors hover:bg-blue-600 duration-300 w-full sm:w-auto cursor-pointer"
             >
               <span>Send a mail</span>
               <ArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
             </Link>
             <button
               onClick={handleBookCall}
-              className="flex items-center font-urbanist font-medium text-sm sm:text-base md:text-[20px] justify-center gap-2 bg-white text-[#007BFF] rounded-[8px] px-3 sm:px-5 py-2 transition-colors hover:bg-gray-100 duration-300 w-full sm:w-auto"
+              className="flex items-center font-urbanist font-medium text-sm sm:text-base md:text-[20px] justify-center gap-2 bg-white text-[#007BFF] rounded-[8px] px-3 sm:px-5 py-2 transition-colors hover:bg-gray-100 duration-300 w-full sm:w-auto cursor-pointer"
               disabled={isLoading}
             >
               <span>{isLoading ? "Opening Calendar..." : "Book a call"}</span>
@@ -153,7 +153,7 @@ export default function Footer() {
                 href="https://www.behance.net/rashiamarasingha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform active:scale-95"
+                className="transition-transform active:scale-95 cursor-pointer"
                 onClick={() => handleIconClick("behance")}
                 onMouseEnter={() => setHoveredIcon("behance")}
                 onMouseLeave={() => setHoveredIcon(null)}
@@ -181,7 +181,7 @@ export default function Footer() {
                 href="https://dribbble.com/Rashini_Kaweesha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform active:scale-95"
+                className="transition-transform active:scale-95 cursor-pointer"
                 onClick={() => handleIconClick("dribbble")}
                 onMouseEnter={() => setHoveredIcon("dribbble")}
                 onMouseLeave={() => setHoveredIcon(null)}
@@ -209,7 +209,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/rashini-kaweesha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform active:scale-95"
+                className="transition-transform active:scale-95 cursor-pointer"
                 onClick={() => handleIconClick("linkedin")}
                 onMouseEnter={() => setHoveredIcon("linkedin")}
                 onMouseLeave={() => setHoveredIcon(null)}
@@ -237,7 +237,7 @@ export default function Footer() {
                 href="https://x.com/kaweesha86196"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-transform active:scale-95"
+                className="transition-transform active:scale-95 cursor-pointer"
                 onClick={() => handleIconClick("x")}
                 onMouseEnter={() => setHoveredIcon("x")}
                 onMouseLeave={() => setHoveredIcon(null)}

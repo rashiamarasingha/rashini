@@ -30,7 +30,7 @@ export default function AboutMe() {
             }}
           >
             <Image
-              src="/rashniDet.png"
+              src="/AboutMe.png"
               alt="Designer working on UI/UX sketches"
               width={600}
               height={450}
@@ -155,6 +155,8 @@ export default function AboutMe() {
                   >
                     <Link
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[#007BFF] hover:text-[#0056b3]"
                     >
                       <div className="flex items-center space-x-1">
