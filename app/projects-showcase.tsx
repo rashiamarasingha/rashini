@@ -90,13 +90,55 @@ export default function ProjectsShowcase() {
     if (firstRowRef.current && secondRowRef.current) {
       // For the first row (left to right)
       const firstRowWidth = firstRowRef.current.scrollWidth;
-      // const firstRowVisibleWidth = firstRowRef.current.offsetWidth;
-
       // For the second row (right to left)
       const secondRowWidth = secondRowRef.current.scrollWidth;
-      // const secondRowVisibleWidth = secondRowRef.current.offsetWidth;
 
-      // Animate first row (left to right)
+      // Function to start animations
+      const startAnimations = () => {
+        // Animate first row (left to right)
+        firstRowControls.start({
+          x: [0, -firstRowWidth / 2],
+          transition: {
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 30,
+              ease: "linear",
+            },
+          },
+        });
+
+        // Animate second row (right to left)
+        secondRowControls.start({
+          x: [-secondRowWidth / 2, 0],
+          transition: {
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 30,
+              ease: "linear",
+            },
+          },
+        });
+      };
+
+      startAnimations();
+    }
+  }, [firstRowControls, secondRowControls]);
+
+  // Handle mouse enter to pause animations
+  const handleMouseEnter = () => {
+    firstRowControls.stop();
+    secondRowControls.stop();
+  };
+
+  // Handle mouse leave to resume animations
+  const handleMouseLeave = () => {
+    if (firstRowRef.current && secondRowRef.current) {
+      const firstRowWidth = firstRowRef.current.scrollWidth;
+      const secondRowWidth = secondRowRef.current.scrollWidth;
+
+      // Resume first row animation
       firstRowControls.start({
         x: [0, -firstRowWidth / 2],
         transition: {
@@ -109,7 +151,7 @@ export default function ProjectsShowcase() {
         },
       });
 
-      // Animate second row (right to left)
+      // Resume second row animation
       secondRowControls.start({
         x: [-secondRowWidth / 2, 0],
         transition: {
@@ -122,12 +164,12 @@ export default function ProjectsShowcase() {
         },
       });
     }
-  }, [firstRowControls, secondRowControls]);
+  };
 
   return (
     <div className="bg-[#F0F7FF] py-16 px-4 md:px-6 overflow-hidden" id="projects">
       <div className="max-w-7xl mx-auto">
-      <motion.div
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +211,12 @@ export default function ProjectsShowcase() {
         </motion.div>
 
         {/* First row carousel - Left to Right */}
-        <div className="mb-8 w-full" ref={firstRowRef}>
+        <div
+          className="mb-8 w-full"
+          ref={firstRowRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <motion.div className="flex" animate={firstRowControls}>
             {/* Double the projects for seamless loop */}
             {[...firstRowProjects, ...firstRowProjects].map(
@@ -178,9 +225,9 @@ export default function ProjectsShowcase() {
                   key={`${project.id}-${index}`}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] shadow-md  hover:shadow-lg overflow-hidden border w-[400px] h-[520px]  md:w-[500px] md:h-fit mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
+                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] shadow-md hover:shadow-lg overflow-hidden border w-[400px] h-[520px] md:w-[500px] md:h-fit mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
                 >
-                  <div className="relative rounded-[10px]  h-[250px] bg-white overflow-hidden">
+                  <div className="relative rounded-[10px] h-[250px] bg-white overflow-hidden">
                     <div
                       className={`w-full h-full transition-transform duration-500 ${
                         hoveredProject === project.id
@@ -192,13 +239,13 @@ export default function ProjectsShowcase() {
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-fill "
+                        className="object-fill"
                       />
                     </div>
                   </div>
                   <div className="pt-5 flex flex-col justify-between h-[200px]">
                     <div>
-                      <h3 className="font-medium font-inter text-xl text-slate-900 mb-3 ">
+                      <h3 className="font-medium font-inter text-xl text-slate-900 mb-3">
                         {project.title}
                       </h3>
                       <p className="text-slate-600 font-inter font-normal text-[16px] mb-6 text-base line-clamp-3">
@@ -207,9 +254,9 @@ export default function ProjectsShowcase() {
                     </div>
                     <div className="border rounded-[52px] border-none w-fit px-4 py-2 bg-linear-to-r from-[#8ec0f6] to-[#ffffff]">
                       <Link
-                         href={`${project.href}`}
-                         target="_blank" 
-                         rel="noopener noreferrer"
+                        href={`${project.href}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter group cursor-pointer"
                       >
                         View project
@@ -230,7 +277,12 @@ export default function ProjectsShowcase() {
         </div>
 
         {/* Second row carousel - Right to Left */}
-        <div className="w-full " ref={secondRowRef}>
+        <div
+          className="w-full"
+          ref={secondRowRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <motion.div className="flex" animate={secondRowControls}>
             {/* Double the projects for seamless loop */}
             {[...secondRowProjects, ...secondRowProjects].map(
@@ -239,9 +291,9 @@ export default function ProjectsShowcase() {
                   key={`${project.id}-${index}`}
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
-                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] hover:shadow-lg  overflow-hidden shadow-md border border-slate-100 w-[400px] h-[520px]  md:w-[500px] md:h-fit  mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
+                  className="bg-white p-5 rounded-[14px] hover:border-[#c5e0fc] hover:shadow-lg overflow-hidden shadow-md border border-slate-100 w-[400px] h-[520px] md:w-[500px] md:h-fit mx-4 flex-shrink-0 hover:-translate-y-2 transition-transform duration-300"
                 >
-                  <div className="relative rounded-[14px]  h-[250px] bg-white overflow-hidden">
+                  <div className="relative rounded-[14px] h-[250px] bg-white overflow-hidden">
                     <div
                       className={`w-full h-full transition-transform duration-500 ${
                         hoveredProject === project.id
@@ -259,7 +311,7 @@ export default function ProjectsShowcase() {
                   </div>
                   <div className="pt-5 flex flex-col justify-between h-[200px]">
                     <div>
-                      <h3 className="font-medium font-inter text-xl text-slate-900 mb-3 ">
+                      <h3 className="font-medium font-inter text-xl text-slate-900 mb-3">
                         {project.title}
                       </h3>
                       <p className="text-slate-600 font-inter font-normal text-[16px] mb-6 text-base line-clamp-3">
@@ -268,14 +320,14 @@ export default function ProjectsShowcase() {
                     </div>
                     <div className="border rounded-[52px] w-fit border-none px-4 py-2 bg-linear-to-r from-[#8ec0f6] to-[#ffffff]">
                       <Link
-                         href={`${project.href}`}
-                         target="_blank" 
-                         rel="noopener noreferrer"
+                        href={`${project.href}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-black text-[16px] font-normal font-inter group cursor-pointer"
                       >
                         View project
                         <span
-                          className={`ml-1 transition-transform flex justify-center items-center duration-300 bg-[#007BFF]  rounded-full w-6 h-6 ${
+                          className={`ml-1 transition-transform flex justify-center items-center duration-300 bg-[#007BFF] rounded-full w-6 h-6 ${
                             hoveredProject === project.id ? "translate-x-1" : ""
                           }`}
                         >
@@ -292,9 +344,9 @@ export default function ProjectsShowcase() {
 
         <div className="mt-12 text-center">
           <div className="inline-block">
-            <Link 
-              href="https://www.behance.net/rashiamarasingha" 
-              target="_blank" 
+            <Link
+              href="https://www.behance.net/rashiamarasingha"
+              target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="rounded-[8px] font-inter font-medium text-[16px] bg-[#007BFF] hover:bg-blue-600 text-white py-6 px-8 cursor-pointer">
